@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'home',
     'profiles',
     'gifts',
+    'contact'
 ]
 
 MIDDLEWARE = [
