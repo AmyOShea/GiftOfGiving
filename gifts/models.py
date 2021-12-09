@@ -24,9 +24,10 @@ class Gift(models.Model):
     age_range = models.CharField(max_length=25,
                                     choices=AGE_RANGE_CHOICES,
                                     null=False, blank=False)
+    image = models.ImageField(upload_to='gift_images/', blank=True)
     needed = models.BooleanField(default=True)
     committed = models.BooleanField(default=False)
-    commited_by = models.CharField(max_length=150, null=True, blank=True)
+    committed_by = models.CharField(max_length=150, null=True, blank=True)
     received = models.BooleanField(default=False)
 
     def __str__(self):
@@ -38,7 +39,7 @@ class Donation(models.Model):
     A model to allow donations and connect the donor with the gift
     they commited to buy
     """
-    user = models.CharField(max_length=150, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     contact_number = models.CharField(max_length=50, null=False, blank=False)
     
     def __str__(self):

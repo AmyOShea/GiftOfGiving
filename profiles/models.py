@@ -34,15 +34,15 @@ class CharityAddress(models.Model):
     address_line_one = models.CharField(max_length=150,
                             null=False, blank=False)
     address_line_two = models.CharField(max_length=150,
-                            null=False, blank=False)
+                            null=True, blank=True)
     address_line_three = models.CharField(max_length=150,
-                            null=False, blank=False)
+                            null=True, blank=True)
     county = models.CharField(max_length=150,
                             null=False, blank=False)
     country = models.CharField(max_length=150,
                             null=False, blank=False)
     postcode = models.CharField(max_length=150,
-                            null=False, blank=False)
+                            null=True, blank=True)
 
     def __str__(self):
         return self.organisation_name
