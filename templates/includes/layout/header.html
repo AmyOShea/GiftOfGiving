@@ -1,3 +1,33 @@
 <header>
-    
+    <!-- Third Toggle navbar: https://getbootstrap.com/docs/5.1/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="primary-secondary-pallatte">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">GiftOfGiving</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <!-- Second example of horizontial alignment for justify-content-end: https://getbootstrap.com/docs/5.1/components/navs-tabs/ -->
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <!-- float-end instead of float-right in v5: https://stackoverflow.com/questions/63948287/bootstrap-5-navbar-align-items-right -->
+            <ul class="navbar-nav float-end">
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'home' %}>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Organizations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'contact' %}>Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Sign-up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Log-in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 </header>
