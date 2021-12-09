@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- core meta -->
+    {% include 'includes/head/meta.html' %}
+    <!-- core css -->
+    {% include 'includes/head/stylesheets.html' %}
+    <!-- onload JS -->
+    {% block onloadjs %}
+    {% endblock %}
+    <title>Gift of Giving</title>
+</head>
+
+<body>
+    <!-- header -->
+    {% include 'includes/layout/header.html' %}
+    {% if messages %}
+    <!-- messages -->
+    <div class="message-container">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast-error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast-warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast-success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast-info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+    <!-- footer -->
+    {% include 'includes/layout/footer.html' %}
+    <!-- postload JS -->
+    {% block postloadjs %}
+    {% include 'includes/postload-scripts/scripts.html' %}
+    {% endblock %}
+</body>
+
+</html>
