@@ -16,6 +16,7 @@ class ProfileAdmin(admin.ModelAdmin):
 class CharityAddressAdmin(admin.ModelAdmin):
     list_display = (
         'user',
+        'organisation_name',
         'address_line_one',
         'address_line_two',
         'address_line_three',
