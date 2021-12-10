@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row px-3">
+    <div class="col12">
+        <h2>Update Contact Address</h2>
+        <p>Please enter the registered address of your charity</p>
+    </div>
+    <div class="col col-xs-12 col-md-8 col-lg-6">
+        <form method="POST" action="{% url 'edit_address' request.user %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field | as_crispy_field }}
+            {% endfor %}
+            <button type="submit">Update Address</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

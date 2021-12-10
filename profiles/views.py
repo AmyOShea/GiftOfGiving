@@ -21,6 +21,7 @@ def profile(request, user):
     return render(request, 'profiles/profile.html', context)
 
 
+@login_required
 def edit_profile(request, user):
     """ View to render edit profile and allow users to update profile """
     global profile
@@ -49,15 +50,27 @@ def edit_profile(request, user):
     context = {
         'form': form,
     }
-    
+
     return render(request, 'profiles/edit_profile.html', context)
 
 
+@login_required
 def edit_address(request, user):
     """ View to render edit address and allow users to update address"""
+    global address
+    try:
+        address = get_object_or_404(CharityAddress, user=request.user)
+    except:
+        CharityAddress.objects.create(
+            user=request.user, address_line_one= '',
+            address_line_two= '',
+            count='', country = '')
+
     if request.method == 'POST':
-        form = CharityAddressForm(request.POST)
+        form = CharityAddressForm(request.POST, instance=address)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
             form.save()
             messages.success(request, 'Charity address updated!')
         else:
@@ -66,10 +79,9 @@ def edit_address(request, user):
                 'ERROR: Profile update failed. Please try again.')
 
     else:
-        form = CharityAddressForm()
+        form = CharityAddressForm(instance=address)
 
     context = {
         'form': form,
-        'user': user
     }
     return render(request, 'profiles/edit_contact_address.html', context)
