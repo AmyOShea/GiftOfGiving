@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&family=Meow+Script&display=swap');
+
 :root {
     --primary: #161F3C;
     --secondary: #EEE2D6;
@@ -30,5 +32,23 @@
     border: 1px solid var(--secondary);
 }
 
+body {
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
+
 /* Footer */
 
+
+/* HOME PAGE */
+
+.welcome-container {
+    background-image: url("/media/hero-img.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.welcome-container h1 {
+    font-family: 'Meow Script', cursive;
+}
