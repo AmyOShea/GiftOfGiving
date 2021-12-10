@@ -67,6 +67,13 @@ body {
     text-align: center;
 }
 
+/* Why We Do It section*/
+
+.why-section {
+    color: #EEE2D6;
+    background-color: #161F3C;
+}
+
 /* How it works section*/
 
 .how-section {
