@@ -61,8 +61,21 @@ body {
     margin: auto;
 }
 
-.heart-icon {
+.heart-icon, .snowflake-icon {
     color: #4E66AC;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* How it works section*/
+
+.how-section {
+    margin: 10px;
+}
+
+
+.snowflake-icon {
+    color: #859AD1;
     font-size: 2.5rem;
     text-align: center;
 }
