@@ -42,6 +42,7 @@ body {
 /* HOME PAGE */
 
 .welcome-container {
+    background-color: #C6DFF3;
     background-image: url("/media/hero-img.webp");
     background-position: center;
     background-repeat: no-repeat;
@@ -51,4 +52,32 @@ body {
 
 .welcome-container h1 {
     font-family: 'Meow Script', cursive;
+}
+
+/* Mission Statement */
+
+.mission-section {
+    width: 60%;
+    margin: auto;
+}
+
+.heart-icon {
+    color: #4E66AC;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 768px) {
+    .mission-section {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .mission-section {
+        width: 95%;
+    }
 }
