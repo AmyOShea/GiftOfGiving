@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&family=Meow+Script&display=swap');
+
 :root {
     --primary: #161F3C;
     --secondary: #EEE2D6;
@@ -30,5 +32,72 @@
     border: 1px solid var(--secondary);
 }
 
+body {
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
+
 /* Footer */
 
+
+/* HOME PAGE */
+
+.welcome-container {
+    background-color: #C6DFF3;
+    background-image: url("/media/hero-img.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.welcome-container h1 {
+    font-family: 'Meow Script', cursive;
+}
+
+/* Mission Statement */
+
+.mission-section {
+    width: 60%;
+    margin: auto;
+}
+
+.heart-icon, .snowflake-icon {
+    color: #4E66AC;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Why We Do It section*/
+
+.why-section {
+    color: #EEE2D6;
+    background-color: #161F3C;
+}
+
+/* How it works section*/
+
+.how-section {
+    margin: 10px;
+}
+
+
+.snowflake-icon {
+    color: #859AD1;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 768px) {
+    .mission-section {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .mission-section {
+        width: 95%;
+    }
+}
