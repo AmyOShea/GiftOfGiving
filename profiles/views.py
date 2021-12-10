@@ -49,6 +49,7 @@ def edit_profile(request, user):
 
     context = {
         'form': form,
+        'user': user
     }
 
     return render(request, 'profiles/edit_profile.html', context)
@@ -64,7 +65,7 @@ def edit_address(request, user):
         CharityAddress.objects.create(
             user=request.user, address_line_one= '',
             address_line_two= '',
-            count='', country = '')
+            county='', country = '')
 
     if request.method == 'POST':
         form = CharityAddressForm(request.POST, instance=address)
@@ -73,6 +74,7 @@ def edit_address(request, user):
             form.user = request.user
             form.save()
             messages.success(request, 'Charity address updated!')
+            return redirect(reverse('profile', args=[user]))
         else:
             messages.error(
                 request,
@@ -83,5 +85,6 @@ def edit_address(request, user):
 
     context = {
         'form': form,
+        'user': user
     }
     return render(request, 'profiles/edit_contact_address.html', context)

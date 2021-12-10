@@ -34,7 +34,7 @@ class CharityAddress(models.Model):
     organisation_name = models.CharField(max_length=150,
                             null=True, blank=True)
     address_line_one = models.CharField(max_length=150,
-                            null=False, blank=False)
+                            null=True, blank=True)
     address_line_two = models.CharField(max_length=150,
                             null=True, blank=True)
     address_line_three = models.CharField(max_length=150,
