@@ -11,7 +11,7 @@
         <p>You have not updated your profile information.</p>
         <p>Please enter your details below</p>
     {% endif %}
-    <button>Edit Profile</button>
+    <a href="{% url 'edit_profile' request.user %}">Edit Profile</a>
 
     {% if address %}
         <p>{{address.organisation_name}}</p>
@@ -25,5 +25,5 @@
         <p>You have not updated your organisations contact information.</p>
         <p>Please enter your contact address details below</p>
     {% endif %}
-    <button>Edit Address</button>
+    <a href="{% url 'edit_address' request.user %}">Edit Address</a>
 {% endblock %}
