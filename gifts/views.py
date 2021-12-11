@@ -52,6 +52,5 @@ def add_gift(request, user):
     template = 'gifts/add-gifts.html'
     context = {
         'add_gift_form': add_gift_form,
-        "user": user,
     }
     return render(request, template, context)
