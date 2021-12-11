@@ -23,4 +23,17 @@
         </form>
     </div>
 </div>
+{% if request.user == gift.committed_by %}
+<div class="row no-gutters align-items-center">
+    <div class="col-6 col-sm-4 col-md-3">
+        <p>Please post this item to {{gift.organisation_name}}</p>
+        <p>{{address.address_line_one}}</p>
+        <p>{{address.address_line_two}}</p>
+        <p>{{address.address_line_three}}</p>
+        <p>{{address.county}}</p>
+        <p>{{address.country}}</p>
+        <p>{{address.postcode}}</p>
+    </div>
+</div>
+{% endif %}
 {% endblock %}

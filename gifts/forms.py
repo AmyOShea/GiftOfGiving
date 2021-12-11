@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Gift, Donation
+from .models import Gift
 
 class GiftForm (forms.ModelForm):
 
@@ -28,10 +28,3 @@ class GiftForm (forms.ModelForm):
             self.fields['estimated_price'].widget.attrs['class'] = 'field-styling'
             self.fields['age_range'].widget.attrs['class'] = 'field-styling'
             self.fields['image'].widget.attrs['class'] = 'field-styling'
-
-
-class DonateGiftForm (forms.ModelForm):
-    """ Donate gift form """
-    class Meta:
-        model = Donation
-        fields = ['contact_number']
