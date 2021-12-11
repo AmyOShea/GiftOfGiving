@@ -116,18 +116,23 @@ footer a i:hover,
 
 /* Why We Do It section*/
 .why-section {
-    color: var(--secondary);
     background-color: var(--primary);
+    background-image: url('/media/light-banner.webp');
 }
 
 /* How it works section*/
-.how-section {
-}
 
 .snowflake-icon {
     color: var(--snowflake-blue);
     font-size: 2.5rem;
     text-align: center;
+}
+
+.blue-box {
+    background-color: #C6DFF3;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 3px;
 }
 
 /* MEDIA QUERIES */
@@ -142,7 +147,7 @@ footer a i:hover,
 }
 
 @media only screen and (max-width: 576px) {
-        .welcome-container {
+    .welcome-container {
         height: 92vh;
         background-color: #DEF0FE;
         background-image: url("/media/hero-img.webp");
