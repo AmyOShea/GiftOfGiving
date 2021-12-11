@@ -7,8 +7,8 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from .models import Gift
-from profiles.models import Profile
-from .forms import GiftForm, DonateGiftForm
+from profiles.models import CharityAddress, Profile
+from .forms import GiftForm
 
 
 def gifts(request):
@@ -59,6 +59,7 @@ def add_gift(request, user):
 
 @login_required
 def view_gift(request, user, id):
+    """ View to return single gift and allow users to commit to buy """
     try:
         gift = get_object_or_404(Gift, id=id)
     except:
@@ -66,16 +67,19 @@ def view_gift(request, user, id):
         return redirect('gifts')
     
     gift = get_object_or_404(Gift, id=id)
+    address = CharityAddress.objects.get(organisation_name=gift.organisation_name)
+    
+    context = {
+        'gift': gift,
+        'address': address,
+    }
+
     if request.method == 'POST':
         form = GiftForm(instance=gift)
         form = form.save(commit=False)
         form.committed_by = request.user
         form.save()
-        messages.success(request, 'Successfully added a new gift!')
-        return redirect('gifts')
-
-    context = {
-        'gift': gift,
-    }
+        messages.success(request, 'Thank you for agreeing to purchase this gift.')
+        return render(request, 'gifts/view_gift.html', context)
 
     return render(request, 'gifts/view_gift.html', context)
