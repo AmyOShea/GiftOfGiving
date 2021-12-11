@@ -155,6 +155,65 @@ footer a i:hover,
     border-radius: 3px;
 }
 
+/* General button styling */
+.btn {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    border-radius: 0;
+    color: var(--secondary);
+    background-color: var(--primary);
+    box-shadow: var(--small-box-shadow);
+}
+.btn:hover {
+    color: var(--liberty-blue);
+    -webkit-box-shadow: var(--small-box-shadow);
+    box-shadow: var(--small-box-shadow);
+}
+
+/* All forms on the site */
+.form-control:focus {
+    -webkit-box-shadow: var(--small-box-shadow) !important;
+    box-shadow: var(--small-box-shadow) !important;
+}
+
+.field-styling, .form-control {
+    border-radius: 0;
+    border: 1px solid var(--primary);
+    color: var(--black);
+    font-size: 1.6rem;
+    margin: .5rem 0 3rem 0;
+    font-family: var(--main-font);
+}
+
+.form-group label {
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/* Gift photo upload form styling */
+.field-styling {
+    border-radius: 0;
+    border: 1px solid var(--primary);
+    font-size: 1.6rem;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1200px) {}
 
