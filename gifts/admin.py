@@ -5,7 +5,7 @@ from .models import Gift, Donation
 # Register your models here.
 class GiftAdmin(admin.ModelAdmin):
     list_display = (
-        'user',
+        'organisation_name',
         'description',
         'estimated_price',
         'age_range',
