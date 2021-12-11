@@ -35,16 +35,3 @@ class Gift(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-class Donation(models.Model):
-    """
-    A model to allow donations and connect the donor with the gift
-    they commited to buy
-    """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    contact_number = models.CharField(max_length=50, null=False, blank=False)
-    
-    def __str__(self):
-        return self.user.username
-
