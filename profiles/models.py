@@ -26,7 +26,6 @@ class CharityAddress(models.Model):
     """
     A model to create an address for a charity
     """
-
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     organisation_name = models.CharField(max_length=150, null=False, blank=False)
     address_line_one = models.CharField(max_length=150, null=False, blank=False)
