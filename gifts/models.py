@@ -30,8 +30,8 @@ class Gift(models.Model):
     image = models.ImageField(upload_to='gift_images/', blank=True)
     needed = models.BooleanField(default=True)
     committed = models.BooleanField(default=False)
-    committed_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    committed_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     received = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return self.description

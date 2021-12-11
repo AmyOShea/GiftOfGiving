@@ -43,6 +43,20 @@
             {% endif %}
             <a class="btn mb-4" href="{% url 'edit_address' request.user %}">Edit Address</a>
         {% endif %}
+
+        {% if gifts %}
+            {% for gift in gifts %}
+                <div class="">
+                    <img src="{{ gift.image.url }}" class="d-block w-100" alt="{{ gift.description }}">
+                </div>
+                <!-- gift description -->
+                <p>Gift Desctription: {{ gift.description }}</p>
+                <!-- gift rough price -->
+                <p>Estimated Price: {{ gift.price }}</p>
+                <!-- child age -->
+                <p>Age Range: {{ gift.age_range}}</p>
+            {% endfor %}
+        {% endif %}
     </div>
 
 

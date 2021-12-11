@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from profiles.models import CharityAddress, Profile
+from gifts.models import Gift
 from .forms import ProfileForm, CharityAddressForm
 
 
@@ -24,8 +25,16 @@ def profile(request, user):
             "organisation_name": "",
         },
     )
+            
     user = request.user
     context = {"profile": profile, "address": address, "user": user}
+
+    try:
+        gifts = Gift.objects.filter(committed_by=request.user)
+        context = {"profile": profile, "address": address, "user": user, 'gifts': gifts}
+    except:
+        return render(request, "profiles/profile.html", context)
+
     return render(request, "profiles/profile.html", context)
 
 
