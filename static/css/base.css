@@ -112,13 +112,6 @@ footer a i:hover,
         transform: translateY(100vh);
     }
 }
-.heart-icon,
-.snowflake-icon {
-    font-size: 2.5rem;
-    text-align: center;
-}
-
-
 
 /* Mission Statement */
 .mission-section {
@@ -126,18 +119,18 @@ footer a i:hover,
     margin: auto;
 }
 
-.heart-icon {
-    color: var(--liberty-blue);
-
-.mission-section h3 {
-    font-weight: 600;
-}
-
 .heart-icon,
 .snowflake-icon {
     font-size: 2.5rem;
     text-align: center;
+}
 
+.heart-icon {
+    color: var(--liberty-blue);
+}
+
+.mission-section h3 {
+    font-weight: 600;
 }
 
 /* Why We Do It section*/
