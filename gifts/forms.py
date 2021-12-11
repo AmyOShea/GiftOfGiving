@@ -6,7 +6,7 @@ class GiftForm (forms.ModelForm):
 
     class Meta:
         model = Gift
-        fields = ['estimated_price', 'age_range', 'image']
+        fields = ['description', 'estimated_price', 'age_range', 'image']
         # specify fields
     
     image = forms.ImageField(
@@ -17,12 +17,14 @@ class GiftForm (forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         labels = {
+            'description': 'Description',
             'estimated_price': 'Estimated price',
             'age_range': 'Age range',
             'image': 'Upload gift photo',
         }
 
         for field in self.fields:
+            self.fields['description'].widget.attrs['class'] = 'field-styling'
             self.fields['estimated_price'].widget.attrs['class'] = 'field-styling'
             self.fields['age_range'].widget.attrs['class'] = 'field-styling'
             self.fields['image'].widget.attrs['class'] = 'field-styling'

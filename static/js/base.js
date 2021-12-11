@@ -6,7 +6,7 @@ function createSnow() {
     snow.classList.add('fas')
     snow.classList.add('fa-circle')
 
-    snow.style.left = Math.random() * window.innerWidth + 'px';
+    snow.style.left = Math.random() * window.innerWidth - 30 + 'px';
     snow.style.animationDuration = Math.random()  *3 + 2 + 's';
     snow.style.opacity = Math.random();
     snow.style.fontSize = Math.random() + 'rem';
@@ -19,7 +19,7 @@ function createSnow() {
     }, 6000 )
 }
 
-if (currentUrl === 'https://8000-turquoise-lynx-0e4iiz4t.ws-eu23.gitpod.io/' || currentUrl === 'https://gift-of-giving.herokuapp.com/' ) {
+if (currentUrl === 'https://8000-red-bass-pzg6c36t.ws-eu23.gitpod.io/' || currentUrl === 'https://gift-of-giving.herokuapp.com/' ) {
     setInterval(createSnow, 10)
 }
 
