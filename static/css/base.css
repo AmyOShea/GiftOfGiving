@@ -32,7 +32,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-size: calc(1.4rem + .2vw);
+    font-size: 1.2rem;
+
 }
 
 main {
@@ -157,7 +158,7 @@ footer a i:hover,
 
 /* General button styling */
 .btn {
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-transform: uppercase;
     border-radius: 0;
     color: var(--secondary);
@@ -180,15 +181,15 @@ footer a i:hover,
     border-radius: 0;
     border: 1px solid var(--primary);
     color: var(--black);
-    font-size: 1.6rem;
-    margin: .5rem 0 3rem 0;
+    font-size: 1rem;
+    margin: .5rem 0;
     font-family: var(--main-font);
 }
 
 .form-group label {
     font-family: var(--main-font);
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
     color: var(--primary);
 }
 
