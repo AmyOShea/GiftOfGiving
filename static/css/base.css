@@ -10,6 +10,7 @@
     --secondary: #EEE2D6;
     --light-blue: #C6DFF3;
     --snowflake-blue: #859AD1;
+    --liberty-blue: #4E66AC;
 }
 
 #primary-secondary-pallette {
@@ -42,7 +43,7 @@ main {
 }
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-brand:hover {
-    color: var(--light-blue);
+    color: var(--snowflake-blue);
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -59,7 +60,7 @@ footer {
 }
 footer a i:hover,
 .copyright a:hover {
-    color: var(--light-blue)!important;
+    color: var(--snowflake-blue)!important;
 }
 
 /* HOME PAGE */
@@ -75,6 +76,11 @@ footer a i:hover,
 .welcome-container h1 {
     font-family: var(--cursive-font);
 }
+.heart-icon,
+.snowflake-icon {
+    font-size: 2.5rem;
+    text-align: center;
+}
 
 /* Mission Statement */
 .mission-section {
@@ -82,11 +88,8 @@ footer a i:hover,
     margin: auto;
 }
 
-.heart-icon,
-.snowflake-icon {
-    color: var(--snowflake-blue);
-    font-size: 2.5rem;
-    text-align: center;
+.heart-icon {
+    color: var(--liberty-blue);
 }
 
 /* Why We Do It section*/
@@ -99,11 +102,8 @@ footer a i:hover,
 .how-section {
     margin: 10px;
 }
-
 .snowflake-icon {
     color: var(--snowflake-blue);
-    font-size: 2.5rem;
-    text-align: center;
 }
 
 /* MEDIA QUERIES */
