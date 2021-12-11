@@ -36,6 +36,10 @@ main {
     flex: 1 0 auto;
 }
 
+.row {
+    --bs-gutter-x: 0;
+}
+
 /* Navigation */
 .navbar-light .navbar-brand, 
 .navbar-light .navbar-nav .nav-link {
@@ -65,22 +69,56 @@ footer a i:hover,
 
 /* HOME PAGE */
 .welcome-container {
+    height: 100vh;
     background-color: var(--light-blue);
-    background-image: url("/media/hero-img.webp");
-    background-position: center;
+    background-image: url("media/hero-img.webp");
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    padding: 0;
 }
+
 
 .welcome-container h1 {
     font-family: var(--cursive-font);
+    font-size: 8rem;
+    padding-top: 50px;
+}
+
+.welcome-container h1, .welcome-container h2 {
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #fff,
+    0 0 82px #fff,
+    0 0 92px #fff,
+    0 0 102px #fff,
+    0 0 151px #fff;
+}
+
+/* Snow Animation */
+
+.fa-circle {
+    animation: fall 5s linear forwards;
+    color: #fff;
+    position: absolute;
+    top: -10px;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
 .heart-icon,
 .snowflake-icon {
     font-size: 2.5rem;
     text-align: center;
 }
+
+
 
 /* Mission Statement */
 .mission-section {
@@ -90,20 +128,35 @@ footer a i:hover,
 
 .heart-icon {
     color: var(--liberty-blue);
+
+.mission-section h3 {
+    font-weight: 600;
+}
+
+.heart-icon,
+.snowflake-icon {
+    font-size: 2.5rem;
+    text-align: center;
+
 }
 
 /* Why We Do It section*/
 .why-section {
-    color: var(--secondary);
     background-color: var(--primary);
+    background-image: url('media/light-banner.webp');
 }
 
 /* How it works section*/
-.how-section {
-    margin: 10px;
-}
+ 
 .snowflake-icon {
     color: var(--snowflake-blue);
+}
+
+.blue-box {
+    background-color: #C6DFF3;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 3px;
 }
 
 /* MEDIA QUERIES */
@@ -118,6 +171,20 @@ footer a i:hover,
 }
 
 @media only screen and (max-width: 576px) {
+    .welcome-container {
+        height: 92vh;
+        background-color: #DEF0FE;
+        background-image: url("media/hero-img.webp");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 160vw;
+        width: 100%;
+        padding: 0;
+    }
+    .welcome-container h1 {
+        font-size: 5.3rem;
+        padding-top: 15vh;
+    }
     .mission-section {
         width: 95%;
     }
