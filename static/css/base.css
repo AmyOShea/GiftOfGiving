@@ -10,6 +10,7 @@
     --secondary: #EEE2D6;
     --light-blue: #C6DFF3;
     --snowflake-blue: #859AD1;
+    --liberty-blue: #4E66AC;
 }
 
 #primary-secondary-pallette {
@@ -70,7 +71,7 @@ footer a i:hover,
 .welcome-container {
     height: 100vh;
     background-color: var(--light-blue);
-    background-image: url("/media/hero-img.webp");
+    background-image: url("media/hero-img.webp");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -97,6 +98,23 @@ footer a i:hover,
     0 0 151px #fff;
 }
 
+/* Snow Animation */
+
+.fa-circle {
+    animation: fall 5s linear forwards;
+    color: #fff;
+    position: absolute;
+    top: -10px;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+
 /* Mission Statement */
 .mission-section {
     width: 60%;
@@ -109,7 +127,7 @@ footer a i:hover,
 
 .heart-icon,
 .snowflake-icon {
-    color: var(--snowflake-blue);
+    color: var(--liberty-blue);
     font-size: 2.5rem;
     text-align: center;
 }
@@ -117,7 +135,7 @@ footer a i:hover,
 /* Why We Do It section*/
 .why-section {
     background-color: var(--primary);
-    background-image: url('/media/light-banner.webp');
+    background-image: url('media/light-banner.webp');
 }
 
 /* How it works section*/
@@ -150,7 +168,7 @@ footer a i:hover,
     .welcome-container {
         height: 92vh;
         background-color: #DEF0FE;
-        background-image: url("/media/hero-img.webp");
+        background-image: url("media/hero-img.webp");
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: 160vw;
