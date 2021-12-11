@@ -1,1 +1,37 @@
-Test
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mb-5 body-container">
+    <!-- Add new gift form-->
+    <div class="row no-gutters align-items-center">
+        <div class="">
+            <h1>Required gifts</h1>
+        </div>
+    </div>
+    <div class="row no-gutters align-items-center">
+        <div class="col-6 col-sm-4 col-md-3">
+            {% for gift in show_gifts %}
+            <!-- gift image -->
+            <div class="">
+                <img src="{{ gift.image.url }}" class="d-block w-100" alt="{{ gift.description }}">
+            </div>
+            <!-- gift description -->
+            <p>{{ gift.description }}</p>
+            <!-- gift rough price -->
+            <p> {{ gift.price }}</p>
+            <!-- child age -->
+            <p> {{ gift.age_range}}</p>
+            <!-- needed/committed/received -->
+            <!-- <p> {{ gift.needed }} </p>
+            <p> {{ gift.committed }} </p>
+            <p> {{ gift.received }} </p> -->
+            {% endfor %}
+            <!-- charity name -->
+            {% for profile in show_profile %}
+            <p> {{ profile.organisation_name }}</p>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}
