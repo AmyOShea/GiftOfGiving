@@ -5,13 +5,25 @@
     --secondary: #EEE2D6;
   }
 
-.test {
-    color: #3eabeb;
-}
-
 #primary-secondary-pallatte {
     background-color: var(--primary);
     color: var(--secondary);
+}
+
+/* Generic / Sitewide Styles */
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /* Navigation */
@@ -32,12 +44,10 @@
     border: 1px solid var(--secondary);
 }
 
-body {
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
-}
-
 /* Footer */
-
+footer {
+    flex-shrink: 0;
+}
 
 /* HOME PAGE */
 
