@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row px-3">
+    <div class="col-12">
+        <h2 class="text-uppercase my-4">Update Profile Information</h2>
+    </div>
+    <div class="col col-xs-12 col-md-8 col-lg-6">
+        <form method="POST" action="{% url 'edit_profile' request.user %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field | as_crispy_field }}
+            {% endfor %}
+            <button type="submit" class="btn mb-4">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

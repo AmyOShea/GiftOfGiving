@@ -2,12 +2,18 @@
 {% load static %}
 
 {% block content %}
-
-<form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for field in form %}
-        {{ field | as_crispy_field }}
-    {% endfor %}
-</form>
+<div class="page-top-banner">
+    <h1 class="p-5">Contact Us</h1>
+</div>
+<div class="row d-flex justify-content-center mt-5 mb-4">
+    <div class="col-12 col-md-8 col-lg-4 contact-container p-3">
+        <form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field | as_crispy_field }}
+            {% endfor %}
+        </form>
+    </div>
+</div>
 
 {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row no-gutters align-items-center">
+    <div class="col-6 col-sm-4 col-md-3">
+        <!-- gift image -->
+        <div class="">
+            <img src="{{ gift.image.url }}" class="d-block w-100" alt="{{ gift.description }}">
+        </div>
+        <!-- gift description -->
+        <p>{{ gift.description }}</p>
+        <!-- gift rough price -->
+        <p> {{ gift.price }}</p>
+        <!-- child age -->
+        <p> {{ gift.age_range}}</p>
+        <p> {{ profile.organisation_name }}</p>
+
+        <form method="POST" action="{% url 'view_gift' request.user gift.id %}" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>By submitting this form you agree to purchase the gift and send it to the registered charity</p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% if request.user == gift.committed_by %}
+<div class="row no-gutters align-items-center">
+    <div class="col-6 col-sm-4 col-md-3">
+        <p>Please post this item to {{gift.organisation_name}}</p>
+        <p>{{address.address_line_one}}</p>
+        <p>{{address.address_line_two}}</p>
+        <p>{{address.address_line_three}}</p>
+        <p>{{address.county}}</p>
+        <p>{{address.country}}</p>
+        <p>{{address.postcode}}</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
