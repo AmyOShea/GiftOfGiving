@@ -13,6 +13,7 @@
         <div class="col-6 col-sm-4 col-md-3">
             {% for gift in show_gifts %}
             <!-- gift image -->
+            <a href="{% url 'view_gift' request.user gift.id %}">Buy this gift</a>
             <div class="">
                 <img src="{{ gift.image.url }}" class="d-block w-100" alt="{{ gift.description }}">
             </div>
@@ -31,7 +32,6 @@
             {% for profile in show_profile %}
             <p> {{ profile.organisation_name }}</p>
             {% endfor %}
-
         </div>
     </div>
 {% endblock %}
