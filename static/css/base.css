@@ -47,7 +47,7 @@ main {
 }
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-brand:hover {
-    color: var(--light-blue);
+    color: var(--snowflake-blue);
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -64,7 +64,7 @@ footer {
 }
 footer a i:hover,
 .copyright a:hover {
-    color: var(--light-blue)!important;
+    color: var(--snowflake-blue)!important;
 }
 
 /* HOME PAGE */
@@ -112,6 +112,11 @@ footer a i:hover,
         transform: translateY(100vh);
     }
 }
+.heart-icon,
+.snowflake-icon {
+    font-size: 2.5rem;
+    text-align: center;
+}
 
 
 
@@ -121,15 +126,18 @@ footer a i:hover,
     margin: auto;
 }
 
+.heart-icon {
+    color: var(--liberty-blue);
+
 .mission-section h3 {
     font-weight: 600;
 }
 
 .heart-icon,
 .snowflake-icon {
-    color: var(--liberty-blue);
     font-size: 2.5rem;
     text-align: center;
+
 }
 
 /* Why We Do It section*/
@@ -139,11 +147,9 @@ footer a i:hover,
 }
 
 /* How it works section*/
-
+ 
 .snowflake-icon {
     color: var(--snowflake-blue);
-    font-size: 2.5rem;
-    text-align: center;
 }
 
 .blue-box {
