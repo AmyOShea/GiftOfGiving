@@ -15,12 +15,10 @@ def gifts(request):
     """ View to render gifts template """
 
     show_gifts = Gift.objects.all()
-    show_profile = Profile.objects.all()
-
+    
     template = 'gifts/gifts.html'
     context = {
         'show_gifts': show_gifts,
-        'show_profile': show_profile,
     }
 
     return render(request, template, context)

@@ -19,8 +19,8 @@
             </div>
             <!-- gift description -->
             <p>{{ gift.description }}</p>
-            <!-- gift rough price -->
-            <p> {{ gift.price }}</p>
+            <!-- gift estimated price -->
+            <p> £ {{ gift.estimated_price }}</p>
             <!-- child age -->
             <p> {{ gift.age_range}}</p>
             <!-- needed/committed/received -->
@@ -28,9 +28,7 @@
             <p> {{ gift.committed }} </p>
             <p> {{ gift.received }} </p> -->
             <!-- charity name -->
-            {% for profile in show_profile %}
-            <p> {{ profile.organisation_name }}</p>
-            {% endfor %}
+            <p> {{ gift.organisation_name }}</p> 
             {% endfor %}
         </div>
     </div>
