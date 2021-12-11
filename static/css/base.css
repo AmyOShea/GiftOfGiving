@@ -136,7 +136,7 @@ footer a i:hover,
 /* Why We Do It section*/
 .why-section {
     background-color: var(--primary);
-    background-image: url('media/light-banner.webp');
+    background-image: url('/media/light-banner.webp');
 }
 
 /* How it works section*/
