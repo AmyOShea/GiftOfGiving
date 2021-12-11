@@ -35,6 +35,10 @@ main {
     flex: 1 0 auto;
 }
 
+.row {
+    --bs-gutter-x: 0;
+}
+
 /* Navigation */
 .navbar-light .navbar-brand, 
 .navbar-light .navbar-nav .nav-link {
@@ -64,16 +68,33 @@ footer a i:hover,
 
 /* HOME PAGE */
 .welcome-container {
+    height: 100vh;
     background-color: var(--light-blue);
     background-image: url("/media/hero-img.webp");
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    padding: 0;
 }
+
 
 .welcome-container h1 {
     font-family: var(--cursive-font);
+    font-size: 8rem;
+    padding-top: 50px;
+}
+
+.welcome-container h1, .welcome-container h2 {
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #fff,
+    0 0 82px #fff,
+    0 0 92px #fff,
+    0 0 102px #fff,
+    0 0 151px #fff;
 }
 
 /* Mission Statement */
@@ -97,7 +118,6 @@ footer a i:hover,
 
 /* How it works section*/
 .how-section {
-    margin: 10px;
 }
 
 .snowflake-icon {
@@ -118,6 +138,20 @@ footer a i:hover,
 }
 
 @media only screen and (max-width: 576px) {
+        .welcome-container {
+        height: 92vh;
+        background-color: #DEF0FE;
+        background-image: url("/media/hero-img.webp");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 160vw;
+        width: 100%;
+        padding: 0;
+    }
+    .welcome-container h1 {
+        font-size: 5.3rem;
+        padding-top: 15vh;
+    }
     .mission-section {
         width: 95%;
     }
