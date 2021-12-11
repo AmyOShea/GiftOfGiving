@@ -214,6 +214,18 @@ footer a i:hover,
     cursor: pointer;
 }
 
+/* PROFILE PAGE */
+
+.page-top-banner {
+    background-image: url('/media/light-banner.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile-info p {
+    margin-bottom: 0;
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1200px) {}
 
