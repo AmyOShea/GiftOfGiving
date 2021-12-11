@@ -226,6 +226,14 @@ footer a i:hover,
     margin-bottom: 0;
 }
 
+/* CONTECT PAGE */
+
+.contact-container {
+    border: var(--snowflake-blue) 3px solid;
+    border-radius: 3px;
+    background-color: var(--light-blue);
+}
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1200px) {}
 
