@@ -6,24 +6,26 @@
     {% if profile %}
         <p>{{profile.name}}</p>
         <p>{{profile.organisation_name}}</p>
-        <p>{{profile.type}}</p>
+        <p>{{profile.type|title}}</p>
     {% else %}
         <p>You have not updated your profile information.</p>
         <p>Please enter your details below</p>
     {% endif %}
     <a href="{% url 'edit_profile' request.user %}">Edit Profile</a>
 
-    {% if address %}
-        <p>{{address.organisation_name}}</p>
-        <p>{{address.address_line_one}}</p>
-        <p>{{address.address_line_two}}</p>
-        <p>{{address.address_line_three}}</p>
-        <p>{{address.county}}</p>
-        <p>{{address.country}}</p>
-        <p>{{address.postcode}}</p>
-    {% else %}
-        <p>You have not updated your organisations contact information.</p>
-        <p>Please enter your contact address details below</p>
+    {% if profile.type == 'charity' %}
+        {% if address %}
+            <p>{{address.organisation_name}}</p>
+            <p>{{address.address_line_one}}</p>
+            <p>{{address.address_line_two}}</p>
+            <p>{{address.address_line_three}}</p>
+            <p>{{address.county}}</p>
+            <p>{{address.country}}</p>
+            <p>{{address.postcode}}</p>
+        {% else %}
+            <p>You have not updated your organisations contact information.</p>
+            <p>Please enter your contact address details below</p>
+        {% endif %}
+        <a href="{% url 'edit_address' request.user %}">Edit Address</a>
     {% endif %}
-    <a href="{% url 'edit_address' request.user %}">Edit Address</a>
 {% endblock %}
