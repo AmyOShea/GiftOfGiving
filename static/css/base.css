@@ -71,7 +71,7 @@ footer a i:hover,
 .welcome-container {
     height: 100vh;
     background-color: var(--light-blue);
-    background-image: url("media/hero-img.webp");
+    background-image: url("/media/hero-img.webp");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -167,7 +167,7 @@ footer a i:hover,
     .welcome-container {
         height: 92vh;
         background-color: #DEF0FE;
-        background-image: url("media/hero-img.webp");
+        background-image: url("/media/hero-img.webp");
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: 160vw;
