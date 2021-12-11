@@ -33,7 +33,6 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
-
 }
 
 main {
@@ -65,9 +64,15 @@ main {
 /* Footer */
 footer {
     flex-shrink: 0;
+    background-color: var(--primary);
 }
-footer a i:hover,
-.copyright a:hover {
+
+footer i {
+    color: var(--secondary);
+    font-size: 1.5rem;
+}
+
+footer a i:hover {
     color: var(--snowflake-blue)!important;
 }
 
@@ -82,7 +87,6 @@ footer a i:hover,
     width: 100%;
     padding: 0;
 }
-
 
 .welcome-container h1 {
     font-family: var(--cursive-font);
