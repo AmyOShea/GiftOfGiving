@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 import cloudinary
 import cloudinary.uploader
 from django.contrib.auth.models import User
@@ -18,6 +19,7 @@ class Gift(models.Model):
     """
     A model to create a profile for a user
     """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=1550, null=False, blank=False)
     estimated_price = models.DecimalField(decimal_places=2, default=0, max_digits=6)
@@ -29,7 +31,7 @@ class Gift(models.Model):
     committed = models.BooleanField(default=False)
     committed_by = models.CharField(max_length=150, null=True, blank=True)
     received = models.BooleanField(default=False)
-
+    
     def __str__(self):
         return self.user.username
 
