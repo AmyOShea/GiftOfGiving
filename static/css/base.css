@@ -103,6 +103,10 @@ footer a i:hover,
     margin: auto;
 }
 
+.mission-section h3 {
+    font-weight: 600;
+}
+
 .heart-icon,
 .snowflake-icon {
     color: var(--snowflake-blue);
