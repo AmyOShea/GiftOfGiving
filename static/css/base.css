@@ -39,6 +39,10 @@ main {
     flex: 1 0 auto;
 }
 
+.row {
+    --bs-gutter-x: 0;
+}
+
 /* Navigation */
 .navbar-light .navbar-brand, 
 .navbar-light .navbar-nav .nav-link {
@@ -68,21 +72,48 @@ footer a i:hover,
 
 /* HOME PAGE */
 .welcome-container {
+    height: 100vh;
     background-color: var(--light-blue);
     background-image: url("/media/hero-img.webp");
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    padding: 0;
 }
+
 
 .welcome-container h1 {
     font-family: var(--cursive-font);
+    font-size: 8rem;
+    padding-top: 50px;
 }
-.heart-icon,
-.snowflake-icon {
-    font-size: 2.5rem;
-    text-align: center;
+
+.welcome-container h1, .welcome-container h2 {
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #fff,
+    0 0 82px #fff,
+    0 0 92px #fff,
+    0 0 102px #fff,
+    0 0 151px #fff;
+}
+
+/* Snow Animation */
+
+.fa-circle {
+    animation: fall 5s linear forwards;
+    color: #fff;
+    position: absolute;
+    top: -10px;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
 
 /* Mission Statement */
@@ -91,81 +122,37 @@ footer a i:hover,
     margin: auto;
 }
 
+.heart-icon,
+.snowflake-icon {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
 .heart-icon {
     color: var(--liberty-blue);
 }
 
+.mission-section h3 {
+    font-weight: 600;
+}
+
 /* Why We Do It section*/
 .why-section {
-    color: var(--secondary);
     background-color: var(--primary);
+    background-image: url('/media/light-banner.webp');
 }
 
 /* How it works section*/
-.how-section {
-    margin: 10px;
-}
+ 
 .snowflake-icon {
     color: var(--snowflake-blue);
 }
 
-/* General button styling */
-.btn {
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    border-radius: 0;
-    color: var(--secondary);
-    background-color: var(--primary);
-    box-shadow: var(--small-box-shadow);
-}
-.btn:hover {
-    color: var(--liberty-blue);
-    -webkit-box-shadow: var(--small-box-shadow);
-    box-shadow: var(--small-box-shadow);
-}
-
-/* All forms on the site */
-.form-control:focus {
-    -webkit-box-shadow: var(--small-box-shadow) !important;
-    box-shadow: var(--small-box-shadow) !important;
-}
-
-.field-styling, .form-control {
-    border-radius: 0;
-    border: 1px solid var(--primary);
-    color: var(--black);
-    font-size: 1.6rem;
-    margin: .5rem 0 3rem 0;
-    font-family: var(--main-font);
-}
-
-.form-group label {
-    font-family: var(--main-font);
-    font-weight: bold;
-    font-size: 2rem;
-    color: var(--primary);
-}
-
-/* Gift photo upload form styling */
-.field-styling {
-    border-radius: 0;
-    border: 1px solid var(--primary);
-    font-size: 1.6rem;
-}
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
+.blue-box {
+    background-color: #C6DFF3;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 3px;
 }
 
 /* MEDIA QUERIES */
@@ -180,6 +167,20 @@ footer a i:hover,
 }
 
 @media only screen and (max-width: 576px) {
+    .welcome-container {
+        height: 92vh;
+        background-color: #DEF0FE;
+        background-image: url("/media/hero-img.webp");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 160vw;
+        width: 100%;
+        padding: 0;
+    }
+    .welcome-container h1 {
+        font-size: 5.3rem;
+        padding-top: 15vh;
+    }
     .mission-section {
         width: 95%;
     }
