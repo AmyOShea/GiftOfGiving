@@ -200,7 +200,7 @@ footer a i:hover {
 .btn {
     font-size: 1rem;
     text-transform: uppercase;
-    border-radius: 0;
+    border-radius: 0 !important;
     color: var(--secondary);
     background-color: var(--primary);
     box-shadow: var(--small-box-shadow);
@@ -209,6 +209,18 @@ footer a i:hover {
     color: var(--liberty-blue);
     -webkit-box-shadow: var(--small-box-shadow);
     box-shadow: var(--small-box-shadow);
+}
+
+.secondary-btn {
+    color: var(--primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: var(--primary) 1px solid;
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
 }
 
 /* All forms on the site */
