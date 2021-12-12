@@ -31,6 +31,7 @@
 
 .btn.btn-file.col-6.pe-2 {
     margin-top: 16px;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
@@ -39,7 +40,14 @@
     }        
 }
 
-/* Next two queries make the span and button in add gift form act the same */
+/* Next three queries make the span and button in add gift form act the same */
+@media screen and (min-width: 768px) and (max-width: 844px) {
+    .btn.btn-file.col-6.pe-2 .icon.p-2 {
+        display: block;
+        padding: 0 0.75rem !important;
+    }     
+}
+
 @media screen and (min-width: 493px) and (max-width: 580px) {
     .btn.btn-file.col-6.pe-2 .icon.p-2 {
         display: block;
