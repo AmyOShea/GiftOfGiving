@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'contact',
     # other
     'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +102,8 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -194,6 +197,7 @@ if 'DEVELOPMENT' in os.environ:
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 else : 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     
     
 
