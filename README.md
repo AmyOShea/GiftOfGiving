@@ -138,3 +138,20 @@ The main goal of this project is to support less fortunate children during holid
 - As a user, I am able to receive inquiries from the site users after they fill in the contact form straight to the database.
 
 [Back to content](#contents)
+
+### User Requirements and Expectations
+
+#### **Requirements**
+
+- Visually pleasant app design
+- Easy site navigation
+- Information of the content layed out in a simple and clear way on both mobile and larger screens
+- Self-explanatory icons where text is absent
+
+#### **Expectations**
+
+- User information is protected by the site
+- User can manipulate elements of the particular page
+- Quick app load time
+
+[Back to content](#contents)
