@@ -12,6 +12,12 @@
     <h1 class="p-5 text-uppercase">Gift Viewer</h1>
 </div>
 
+{% if gift.committed_by %}
+    <p class="text-danger fs-5">This gift has been reserved.</p>
+{% elif profile.user == request.user %}
+    <a class="btn col-12" href="{% url 'edit_gift' gift.id %}">Edit this gift</a>
+{% else %}
+
 <div id="gift-viewer-container">
     <h3><strong> {{ gift.description }}</strong></h3>
     <div class="container">
@@ -47,5 +53,6 @@
     </div>
 </div>
 
+{% endif %}
 {% endif %}
 {% endblock %}
