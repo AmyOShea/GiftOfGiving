@@ -1,14 +1,8 @@
-.container {
-    
+.profile-descrip {
+    line-height: 13px;
+    margin-top: 25px;
 }
 
-.gift-img {
-    margin-right: 25px;
-    height: 15px;
-    width: 15px;
-}
-
-.gift-descrp {
-    width: 50%;
-    padding-top: 10px;
+.table {
+    margin-top: 25px;
 }
