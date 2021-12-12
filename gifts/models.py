@@ -21,7 +21,7 @@ class Gift(models.Model):
     A model to create a profile for a user
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, max_length=36)
-    organisation_name = models.CharField(max_length=1550, null=False, blank=False)
+    organisation_name = models.CharField(max_length=150, null=False, blank=False)
     description = models.CharField(max_length=1550, null=False, blank=False)
     estimated_price = models.DecimalField(decimal_places=2, default=0, max_digits=6)
     age_range = models.CharField(max_length=25,
