@@ -10,63 +10,22 @@
 
 ## Contents
 
-- [UX](#ux)
-  - [Project Goals](#project-goals)
-  - [Site Owner Goals](#site-owner-goals)
-  - [Site Visitor/User Goals](#site-visitor-user-goals)
-  - [User Stories](#user-stories)
-  - [User Requirements and Expectations](#user-requirements-and-expectations)
-    - [**Requirements**](#--requirements--)
-    - [**Expectations**](#--expectations--)
-  - [Design Choices](#design-choices)
-    - [**Fonts**](#--fonts--)
-    - [**Colours**](#--colours--)
-- [Wireframes](#wireframes)
-  - [**Site Map**](#--site-map--)
-  - [**Site Layout**](#--site-layout--)
-- [Information Architecture](#information-architecture)
-  - [Database Choice](#database-choice)
-  - [Database Modelling](#database-modelling)
-    - [**Profile App**](#--profile-app--)
-      - [Profile](#profile)
-    - [**Product App**](#--product-app--)
-      - [Product Category](#product-category)
-      - [Collection Name](#collection-name)
-      - [Tag](#tag)
-      - [Artwork Images](#artwork-images)
-      - [Images Folder](#images-folder)
-      - [Product](#product)
-    - [**Checkout App**](#--checkout-app--)
-      - [Order](#order)
-      - [Order Line](#order-line)
-    - [**Home App**](#--home-app--)
-      - [About Section](#about-section)
-      - [Social Media Icons](#social-media-icons)
-- [Technologies](#technologies)
-  - [Languages](#languages)
-  - [Libraries & Frameworks](#libraries---frameworks)
-  - [Tools](#tools)
-- [Features](#features)
-  - [Implemented Features](#implemented-features)
-    - [**User Account**](#--user-account--)
-    - [**Super User**](#--super-user--)
-    - [**Gallery page**](#--gallery-page--)
-    - [**Shop page**](#--shop-page--)
-    - [**Shopping bag**](#--shopping-bag--)
-    - [**Payments**](#--payments--)
-  - [Future Features](#future-features)
-  - [Redundant features](#redundant-features)
-- [Changes applied since planning](#changes-applied-since-planning)
-- [Testing](#testing)
-- [Deployment](#deployment)
-  - [Local Deployment](#local-deployment)
-  - [Deployment to Heroku](#deployment-to-heroku)
-  - [Hosting Media files in AWS](#hosting-media-files-in-aws)
-- [Credits](#credits)
-  - [Images](#images)
-  - [Image editing](#image-editing)
-  - [Code ideas](#code-ideas)
-- [Acknowledgements](#acknowledgements)
+- [Gift Of Giving](#gift-of-giving)
+  - [!GiftOfGiving](#)
+  - [Contents](#contents)
+  - [UX](#ux)
+    - [Project Goals](#project-goals)
+    - [Site Owner Goals](#site-owner-goals)
+    - [Site Visitor/User Goals](#site-visitoruser-goals)
+    - [User Stories](#user-stories)
+    - [User Requirements and Expectations](#user-requirements-and-expectations)
+      - [**Requirements**](#requirements)
+      - [**Expectations**](#expectations)
+    - [Design Choices](#design-choices)
+      - [**Fonts**](#fonts)
+      - [**Colours**](#colours)
+  - [Wireframes](#wireframes)
+    - [**Site Layout**](#site-layout)
 
 ---
 
@@ -155,3 +114,36 @@ The main goal of this project is to support less fortunate children during holid
 - Quick app load time
 
 [Back to content](#contents)
+
+### Design Choices
+
+#### **Fonts**
+
+- *All fonts*
+
+  ```font-family: Baloo Bhaijaan 2', sans-serif;```
+
+- *Special font - welcome container*
+
+  ```font-family: ''Meow Script', cursive;```
+
+#### **Colours**
+
+![Colour palette](/docs/colour-pallette.PNG)
+
+[Back to content](#contents)
+
+## Wireframes
+
+### **Site Layout**
+
+Site moc-ups were designed using [balsamiq wireframes](https://balsamiq.com/). The focus was on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as mobile, tablet and larger screens.
+
+You can view the wireframes created for this project in [site wireframes](/docs/wireframes.pdf) folder.
+
+  **Please note, as we were developing the project, we have identified some weaknesses in the UX and therefore made the required changes. The deployed site looks somewhat different in comparison to the wireframes. These changes will allow the user to have a better experience and allow easier navigation. The design theme of the features is a close match to the overall site to ensure continuation and flow.*
+
+[Back to content](#contents)
+
+---
+
