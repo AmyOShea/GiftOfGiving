@@ -11,19 +11,21 @@
     <h1 class="p-5">Add New Gift Request</h1>
 </div>
 <div class="edit-profile-container add-gift-form">
-            <form method="POST" action="{% url 'add_gift' request.user %}" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in add_gift_form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                {% endfor %}
-                <!-- cancel -->
-                <a class="btn col-12 mt-2" href="{% url 'gifts' %}"><span class="icon p-2">
-                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                </span>Cancel</a>
-            </form>
+    <form method="POST" action="{% url 'add_gift' request.user %}" class="form mb-2" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in add_gift_form %}
+            {% if field.name != 'image' %}
+                {{ field | as_crispy_field }}
+            {% else %}
+                {{ field }}
+            {% endif %}
+        {% endfor %}
+        <!-- cancel -->
+        <div class="d-flex justify-content-center">
+            <a class="btn text-center mt-2 col-12 p-1" href="{% url 'gifts' %}"><span class="icon p-1">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </span>Cancel</a>
+        </div>
+    </form>
 </div>
 {% endblock %}
