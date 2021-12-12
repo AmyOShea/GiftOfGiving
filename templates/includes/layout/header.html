@@ -18,8 +18,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'gifts' %}">Gifts</a>
               </li>
-              <span>|</span>
               {% if user.is_authenticated %}
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_gift' request.user %}">Add Gift</a>
               </li>
