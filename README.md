@@ -51,6 +51,11 @@
   - [Deployment](#deployment)
     - [Local Deployment](#local-deployment)
     - [Deployment to Heroku](#deployment-to-heroku)
+  - [Credits](#credits)
+    - [Images](#images)
+    - [Image editing](#image-editing)
+    - [Code ideas](#code-ideas)
+  - [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -449,3 +454,19 @@ Then follow the instructions to create the superuser.
 [Back to content](#contents)
 
 ---
+
+## Credits
+
+### Images
+
+### Image editing
+
+### Code ideas
+
+[Back to content](#contents)
+
+---
+
+## Acknowledgements
+
+[Back to content](#contents)
