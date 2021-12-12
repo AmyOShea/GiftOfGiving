@@ -34,10 +34,36 @@
     border-radius: 5px;
 }
 
+/* View Gift */
+
+#gift-viewer-container {
+    width: 64vw;
+    border: var(--snowflake-blue) 3px solid;
+    border-radius: 3px;
+    background-color: var(--light-blue);
+    margin: 48px auto;
+    padding: 16px 16px 0 16px;
+}
+
+.address-line-height {
+    line-height: 10px;
+}
+
+#gift-viewer-container img {
+    padding: 0 16px 16px 0;
+}
+
+#gift-viewer-container button {
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 768px) {
     .edit-profile-container {
         width: 93vw;
-    }        
+    }
+    .view-gift-container {
+        width: 93vw;
+    }          
 }
 
 /* Next three queries make the span and button in add gift form act the same */
