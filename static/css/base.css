@@ -185,9 +185,10 @@ footer a i:hover {
 
 .blue-box {
     background-color: var(--light-blue);
-    margin: 0 20px;
+    margin: 0 20px 30px 20px;
     padding: 10px;
     border-radius: 3px;
+    box-shadow: var(--small-box-shadow);
 }
 
 /* General button styling */
