@@ -16,11 +16,15 @@
         <p> {{ gift.age_range}}</p>
         <p> {{ profile.organisation_name }}</p>
 
+        {% if gift.committed_by %}
+            <p class="text-danger fs-5">This gift has been reserved.</p>
+        {% else %}
         <form method="POST" action="{% url 'view_gift' request.user gift.id %}" class="form mb-2" enctype="multipart/form-data">
             {% csrf_token %}
             <p>By submitting this form you agree to purchase the gift and send it to the registered charity</p>
             <button type="submit">Submit</button>
         </form>
+        {% endif %}
     </div>
 </div>
 {% if request.user == gift.committed_by %}
