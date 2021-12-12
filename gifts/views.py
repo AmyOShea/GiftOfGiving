@@ -32,8 +32,8 @@ def add_gift(request, user):
 
     if not verified_profile:
         messages.error(request, (
-            'Functionality available to the verified users only.' +
-            'Please ensure profile is updated and email verification documents.')
+            'Functionality available to the verified users only. ' +
+            'Please ensure profile is updated and email verification documents sent.')
         )
         return redirect(reverse('gifts'))
 
