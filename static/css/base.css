@@ -73,10 +73,15 @@ main {
 /* Bootstrap toast */
 .message-container {
     position: fixed;
-    top: 200px;
-    right: 18px;
+    top: 63px;
+    right: 0px;
     z-index: 99999999999;
 }
+
+.message-container .toast {
+    width: 300px;
+}
+
 .custom-toast {
     border-radius: 0!important;
     border-top: 0!important;
@@ -302,5 +307,11 @@ footer a i:hover {
     }
     .mission-section {
         width: 95%;
+    }
+}
+
+@media only screen and (min-width: 350px) {
+    .message-container .toast {
+        width: 350px;
     }
 }
