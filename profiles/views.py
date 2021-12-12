@@ -42,15 +42,16 @@ def profile(request, user):
 @login_required
 def edit_profile(request, user):
     """View to render edit profile and allow users to update profile"""
+    user=request.user
     # Get object or create empty one
     profile, created = Profile.objects.get_or_create(
-        user=request.user,
+        user=user,
         defaults={"name": "", "organisation_name": "", "type": "donor"},
     )
 
     # Get object or create empty one
     address, created = CharityAddress.objects.get_or_create(
-        user=request.user,
+        user=user,
         defaults={
             "county": "",
             "country": "",
@@ -64,7 +65,7 @@ def edit_profile(request, user):
         if form.is_valid():
             # Add user before commit
             form = form.save(commit=False)
-            form.user = request.user
+            form.user = user
             form.save()
             # Update Charity Address table with org name
             org_name = CharityAddressForm(instance=address)
@@ -86,9 +87,10 @@ def edit_profile(request, user):
 @login_required
 def edit_address(request, user):
     """View to render edit address and allow users to update address"""
+    user=request.user
     # Get object or create empty one
     address, created = CharityAddress.objects.get_or_create(
-        user=request.user,
+        user=user,
         defaults={
             "county": "",
             "country": "",
@@ -102,7 +104,7 @@ def edit_address(request, user):
         if form.is_valid():
             # Add user before submitting form
             form = form.save(commit=False)
-            form.user = request.user
+            form.user = user
             form.save()
             messages.success(request, "Charity address updated!")
             return redirect(reverse("profile", args=[user]))
