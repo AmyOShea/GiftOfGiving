@@ -40,7 +40,7 @@
 }
 
 /* Next two queries make the span and button in add gift form act the same */
-@media screen and (max-width: 580px) {
+@media screen and (min-width: 493px) and (max-width: 580px) {
     .btn.btn-file.col-6.pe-2 .icon.p-2 {
         display: block;
         padding: 0 0.75rem !important;
@@ -50,6 +50,7 @@
 @media screen and (max-width: 492px) {
     .btn.btn-file.col-6.pe-2 .icon.p-2 {
         display: inline-block;
+        padding: 0 0.75rem !important;
     }     
 }
 
