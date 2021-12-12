@@ -15,15 +15,16 @@
     <div class="col-12 col-md-6 col-lg-5"> -->
     <div class="profile-descrip container">
         <div class="row">
-        <div class="col-12 col-md-6" id="profile-address">  
+        <div class="col-12 col-md-6" id="profile-address">
+            <h3><strong>Details</strong></h3>
         {% if profile %}
             {% if profile.name %}
-                <p>Name: <strong>{{profile.name}}</strong></p>
+                <p><strong>Name</strong>: {{profile.name}}</p>
             {% endif %}
             {% if profile.organisation_name %}
-                <p>Organization: <strong>{{profile.organisation_name}}</strong></p>
+                <p><strong>Organization</strong>: {{profile.organisation_name}}</p>
             {% endif %}
-            <p>Profile Type: <strong>{{profile.type|title}}</strong></p>
+            <p><strong>Profile Type</strong>: {{profile.type|title}}</p>
         {% else %}
             <p>You have not updated your profile information.</p>
             <p>Please enter your details below</p>
@@ -32,7 +33,7 @@
         </div>
         <div class="col-12 col-md-6" id="address-container">
         {% if profile.type == 'charity' %}
-            <p><strong>Address</strong></p>
+            <h3><strong>Address</strong></h3>
             {% if address %}
                 <p>{{address.organisation_name}}</p>
                 <p>{{address.address_line_one}}</p>
