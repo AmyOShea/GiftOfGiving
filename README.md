@@ -32,6 +32,10 @@
       - [**Profiles App**](#profiles-app)
         - [Profile](#profile)
         - [Charity Address](#charity-address)
+      - [**Gifts App**](#gifts-app)
+        - [Gift](#gift)
+      - [**Contact App**](#contact-app)
+        - [Contact](#contact)
 
 ---
 
@@ -183,3 +187,34 @@ Address Line 3 | address_line_three | CharField | max_length=150, null=True, bla
 County | county | CharField | max_length=150, null=False, blank=False
 Country | country | CharField | max_length=150, null=False, blank=False
 Postcode | postcode | CharField | max_length=150, null=True, blank=True
+
+#### **Gifts App**
+
+##### Gift
+
+| **Title** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+ID | id | UUIDField | primary_key=True, default=uuid.uuid4, editable=False, max_length=36
+Organisation Name | organisation_name | CharField | max_length=150, null=False, blank=False
+Description | description | CharField | max_length=150, null=False, blank=False
+Estimated Price | estimated_price | DecimalField | decimal_places=2, default=0, max_digits=6
+Age Range | age_range | CharField | max_length=25, choices=AGE_RANGE_CHOICES, null=False, blank=False
+Image | image | ImageField | upload_to='gift_images/', blank=True
+Needed | needed | BooleanField | default=True
+Committed | committed | BooleanField | default=False
+Committed By | committed_by | ForeignKey | User, on_delete=models.CASCADE, null=True, blank=True
+Received | received | BooleanField | default=False
+
+#### **Contact App**
+
+##### Contact
+
+| **Title** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Name | name | CharField | max_length=80, null=False, blank=False
+Email | email | CharField | max_length=80, null=False, blank=False
+Comments | comments | CharField | max_length=1500, null=False, blank=False
+
+[Back to content](#contents)
+
+---  
