@@ -54,6 +54,25 @@
         {% endif %}
         </div>
     </div>
+    <div class="pt-3 custom-line-height">
+        {% if profile.type == 'charity' and not profile.verified %}
+        <p class="text-danger">
+            <strong>Urgent Action Required</strong>
+        </p>
+            <p>
+                In order to verify your charity so you can add gift requests,
+                please send us the following documents by email to admin@giftofgiving.com:
+            </p>
+                <ul>
+                    <li>Registered Charity number</li>
+                    <li class="pt-3">Proof of ID</li>
+                    <li class="pt-3">Proof of employment with charity</li>
+                </ul>
+            <p> 
+                Once we have recieved these documents, our admins will verify your account.
+            </p>
+        {% endif %}
+    </div>
     {% if gifts %}
     <h3><strong>Gifts you have committed to buy</strong></h3>
     <table class="table table-bordered table-striped table-hover">

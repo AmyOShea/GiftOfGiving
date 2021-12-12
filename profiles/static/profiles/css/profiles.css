@@ -11,6 +11,10 @@
     margin-bottom: 48px;
 }
 
+div.custom-line-height {
+    line-height: 26px;
+}
+
 /* Forms for editing charity info */
 
 .edit-profile-container {
