@@ -66,7 +66,7 @@ main {
     border: 1px solid var(--secondary);
 }
 
-.navbar-nav span {
+.nav-divider {
     padding-top: 7px;
 }
 
