@@ -14,34 +14,48 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
               </li>
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'gifts' %}">Gifts</a>
               </li>
               {% if user.is_authenticated %}
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_gift' request.user %}">Add Gift</a>
               </li>
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile' request.user %}">Profile</a>
               </li>
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href='/accounts/logout/'>Sign-out </a>
               </li>
               {% endif %}
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact' %}">Contact</a>
               </li>
               {% if not user.is_authenticated %}
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href='/accounts/signup/'>Sign-up</a>
               </li>
-              <span>|</span>
+              <li class="nav-divider">
+                <span>|</span>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href='/accounts/login/'>Log-in </a>
               </li>
