@@ -65,12 +65,14 @@
           <tbody>
             {% if gifts %}
             {% for gift in gifts %}
+            <tr>
                 <!-- gift description -->
                 <td>{{ gift.description }}</td>
                 <!-- gift rough price -->
                 <td>£{{ gift.estimated_price }}</td>
                 <!-- child age -->
                 <td>{{ gift.age_range}}</td>
+            </tr>
             {% endfor %}
             {% endif %}
           </tbody>
