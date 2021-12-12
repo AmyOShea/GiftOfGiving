@@ -1,16 +1,36 @@
 .profile-descrip {
     line-height: 13px;
-    margin-top: 25px;
+    margin-top: 48px;
 }
 
 .table {
-    margin-top: 25px;
+    margin-top: 48px;
 }
 
+/* Forms for editing charity info */
+
 .edit-profile-container {
-    width: 380px;
+    width: 64vw;
     border: var(--snowflake-blue) 3px solid;
     border-radius: 3px;
     background-color: var(--light-blue);
-    margin: 25px auto;
+    margin: 48px auto;
+    padding: 16px 16px 0 16px;
+}
+
+.edit-profile-container form button {
+    margin-top: 16px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .edit-profile-container {
+        width: 93vw;
+    }        
+}
+
+@media screen and (min-width: 989px) {
+    .edit-profile-container {
+        width: 33vw;
+    }        
 }
