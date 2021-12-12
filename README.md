@@ -36,6 +36,10 @@
         - [Gift](#gift)
       - [**Contact App**](#contact-app)
         - [Contact](#contact)
+  - [Technologies](#technologies)
+    - [Languages](#languages)
+    - [Libraries & Frameworks](#libraries--frameworks)
+    - [Tools](#tools)
 
 ---
 
@@ -218,3 +222,42 @@ Comments | comments | CharField | max_length=1500, null=False, blank=False
 [Back to content](#contents)
 
 ---  
+
+## Technologies
+
+### Languages
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Python](https://www.python.org/)
+
+### Libraries & Frameworks
+
+- [Django](https://www.djangoproject.com/)
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+- [Jinja](https://jinja.palletsprojects.com/en/2.10.x/)
+- [jQuery](https://jquery.com/)
+- [Popper JS](https://popper.js.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Gunicorn](https://pypi.org/project/gunicorn/)
+- [Psycopg2](https://pypi.org/project/psycopg2/)
+- [Google fonts](https://fonts.google.com/)
+- [Font-Awesome](https://fontawesome.com/icons?d=gallery)
+
+### Tools
+
+- [PIP](https://pypi.org/project/pip/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Heroku](https://www.heroku.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Boto 3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Color editor](https://coolors.co/)
+- [Favicons](https://fontawesome.com/icons?d=gallery)
+- [Balsamiq](https://balsamiq.com/)
+
+[Back to content](#contents)
+
+---
+
