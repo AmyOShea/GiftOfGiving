@@ -11,6 +11,7 @@
     --light-blue: #C6DFF3;
     --snowflake-blue: #859AD1;
     --liberty-blue: #4E66AC;
+    --white: var(--white);
 
     /* box shadows */
    --small-box-shadow: 1px 1px 7px 0 var(--primary);
@@ -69,6 +70,27 @@ main {
     padding-top: 7px;
 }
 
+/* Bootstrap toast */
+.message-container {
+    position: fixed;
+    top: 200px;
+    right: 18px;
+    z-index: 99999999999;
+}
+.custom-toast {
+    border-radius: 0!important;
+    border-top: 0!important;
+}
+.toast-body {
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 1.4rem;
+}
+
+.custom-toast .d-flex {
+    background-color: var(--primary);
+}
+
 /* Footer */
 footer {
     flex-shrink: 0;
@@ -104,21 +126,21 @@ footer a i:hover {
 
 .welcome-container h1, .welcome-container h2 {
     text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #fff,
-    0 0 82px #fff,
-    0 0 92px #fff,
-    0 0 102px #fff,
-    0 0 151px #fff;
+    0 0 7px var(--white),
+    0 0 10px var(--white),
+    0 0 21px var(--white),
+    0 0 42px var(--white),
+    0 0 82px var(--white),
+    0 0 92px var(--white),
+    0 0 102px var(--white),
+    0 0 151px var(--white);
 }
 
 /* Snow Animation */
 
 .fa-circle {
     animation: fall 5s linear forwards;
-    color: #fff;
+    color: var(--white);
     position: absolute;
     top: -10px;
 }
@@ -162,7 +184,7 @@ footer a i:hover {
 }
 
 .blue-box {
-    background-color: #C6DFF3;
+    background-color: var(--light-blue);
     margin: 0 20px;
     padding: 10px;
     border-radius: 3px;
@@ -239,7 +261,7 @@ footer a i:hover {
     margin-bottom: 0;
 }
 
-/* CONTECT PAGE */
+/* CONTACT PAGE */
 
 .contact-container {
     border: var(--snowflake-blue) 3px solid;
