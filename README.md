@@ -40,6 +40,14 @@
     - [Languages](#languages)
     - [Libraries & Frameworks](#libraries--frameworks)
     - [Tools](#tools)
+  - [Features](#features)
+    - [Implemented Features](#implemented-features)
+      - [**User Account**](#user-account)
+      - [**Super User**](#super-user)
+    - [Future Features](#future-features)
+    - [Redundant features](#redundant-features)
+  - [Changes applied since planning](#changes-applied-since-planning)
+  - [Testing](#testing)
 
 ---
 
@@ -261,3 +269,41 @@ Comments | comments | CharField | max_length=1500, null=False, blank=False
 
 ---
 
+## Features
+
+The website is designed using four applications: `Home`, `Gifts`, `Profiles`,  and `Contact`.
+
+### Implemented Features
+
+- The site has **responsive design** when viewed on a mobile, tablet, and desktop.
+- **Easy navigation** to external sites, such as social media accounts.
+- The user is given feedback when they interact with the website (i.e. login to the website, add new gift, commit to buying a gift etc).
+
+#### **User Account**
+
+- The users can **create** an account where they can store account information such as their address and **edit** their details.
+- The user can request a **password re-set**.
+
+#### **Super User**
+
+- The **Super User** can verify that the charity's information in the database, which would then allow the charities to add gifts once verified.
+
+### Future Features
+
+### Redundant features
+
+[Back to content](#contents)
+
+---
+
+## Changes applied since planning
+
+---
+
+## Testing
+
+Testing was done manually throughout the development process. The full rundown of the testing can be found in a separate [TESTING.md](TESTING.md) file.
+
+[Back to content](#contents)
+
+---
