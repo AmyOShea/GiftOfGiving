@@ -75,7 +75,7 @@
     </div>
     {% if gifts %}
     <h3><strong>Gifts you have committed to buy</strong></h3>
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover table-responsive">
         <thead>
             <tr>
               <th scope="col">Gift Desctription</th>
@@ -87,7 +87,7 @@
             {% for gift in gifts %}
             <tr>
                 <!-- gift description -->
-                <td><a href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
+                <td><a class="table-link" href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
                 <!-- gift rough price -->
                 <td>£{{ gift.estimated_price }}</td>
                 <!-- child age -->
@@ -100,7 +100,7 @@
 
     {% if charity_gifts %}
     <h3><strong>Gifts your organisation needs</strong></h3>
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover table-responsive">
         <thead>
             <tr>
               <th scope="col">Gift Desctription</th>
@@ -112,7 +112,7 @@
             {% for gift in charity_gifts %}
             <tr>
                 <!-- gift description -->
-                <td><a href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
+                <td><a class="table-link" href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
                 <!-- gift rough price -->
                 <td>£{{ gift.estimated_price }}</td>
                 <!-- child age -->
