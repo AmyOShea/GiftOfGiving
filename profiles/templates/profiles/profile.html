@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}" type="text/css">
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid page-top-banner p-5">
     <h1>Profile Page</h1>
@@ -8,7 +13,9 @@
 
 <!-- <div class="row d-flex justify-content-center mt-3 profile-info">
     <div class="col-12 col-md-6 col-lg-5"> -->
-    <div class="m-5">    
+    <div class="container m-5">
+        <div class="row">
+        <div class="col" id="profile-address">  
         {% if profile %}
             {% if profile.name %}
                 <p>Name: <strong>{{profile.name}}</strong></p>
@@ -22,7 +29,8 @@
             <p>Please enter your details below</p>
         {% endif %}
         <a class="btn mb-5" href="{% url 'edit_profile' request.user %}">Edit Profile</a>
-
+        </div>
+        <div class="col" id="address-container">
         {% if profile.type == 'charity' %}
             <p><strong>Address</strong></p>
             {% if address %}
@@ -43,21 +51,33 @@
             {% endif %}
             <a class="btn mb-4" href="{% url 'edit_address' request.user %}">Edit Address</a>
         {% endif %}
-
-        {% if gifts %}
-            {% for gift in gifts %}
-                <div class="">
-                    <img src="{{ gift.image.url }}" class="d-block w-100" alt="{{ gift.description }}">
-                </div>
-                <!-- gift description -->
-                <p>Gift Desctription: {{ gift.description }}</p>
-                <!-- gift rough price -->
-                <p>Estimated Price: {{ gift.price }}</p>
-                <!-- child age -->
-                <p>Age Range: {{ gift.age_range}}</p>
-            {% endfor %}
-        {% endif %}
+        </div>
     </div>
+</div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Gift Desctription</th>
+              <th scope="col">Estimated Price</th>
+              <th scope="col">Age Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if gifts %}
+            {% for gift in gifts %}
+                <!-- gift description -->
+                <td>{{ gift.description }}</td>
+                <!-- gift rough price -->
+                <td>£{{ gift.estimated_price }}</td>
+                <!-- child age -->
+                <td>{{ gift.age_range}}</td>
+            {% endfor %}
+            {% endif %}
+          </tbody>
+            
 
+    </table>
+    
+    
 
 {% endblock %}

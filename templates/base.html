@@ -6,10 +6,13 @@
     {% include 'includes/head/meta.html' %}
     <!-- core css -->
     {% include 'includes/head/stylesheets.html' %}
+    {% block extra_css %}
+    {% endblock %}
     <!-- onload JS -->
     {% block onloadjs %}
     {% endblock %}
     <title>Gift of Giving</title>
+
 </head>
 
 <body>
