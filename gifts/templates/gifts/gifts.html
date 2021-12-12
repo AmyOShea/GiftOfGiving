@@ -11,28 +11,34 @@
     </div>
     <div class="row no-gutters align-items-center justify-content-center">
         {% for gift in show_gifts %}
-        <div class="col-12 col-sm-3 col-lg-2 py-3 px-2 contact-container my-3 mx-2">
-            <!-- gift image -->
-            <div class="">
-                <img src="{{ gift.image.url }}" class="d-block w-100 pb-4" alt="{{ gift.description }}">
+            {% if gift.needed %}
+            <div class="col-12 col-sm-3 col-lg-2 py-3 px-2 contact-container my-3 mx-2">
+                <!-- gift image -->
+                <div class="">
+                    <img src="{{ gift.image.url }}" class="d-block w-100 pb-4" alt="{{ gift.description }}">
+                </div>
+                <!-- gift description -->
+                <h5 class="text-capitalize pb-2"><strong><em>{{ gift.description }}</em> </strong>  </h5>
+                <!-- gift estimated price -->
+                <h5 class="text-uppercase"><strong>estimated price:</strong></h5>
+                <p>£ {{ gift.estimated_price }}</p>
+                <!-- child age -->
+                <h5 class="text-uppercase"><strong>age group:</strong></h5>
+                <p>{{ gift.age_range}} year old</p>
+                <!-- needed/committed/received -->
+                <!-- <p> {{ gift.needed }} </p>
+                <p> {{ gift.committed }} </p>
+                <p> {{ gift.received }} </p> -->
+                <!-- charity name -->
+                <h5 class="text-uppercase"><strong>charity name:</strong></h5>
+                <p>{{ gift.organisation_name }}</p>
+                    {% if gift.committed_by %}
+                    <p class="text-danger fs-5">Reserved</p>
+                    {% else %}
+                    <a class="btn col-12" href="{% url 'view_gift' request.user gift.id %}">Buy this gift</a>
+                    {% endif %}
             </div>
-            <!-- gift description -->
-            <h5 class="text-capitalize pb-2"><strong><em>{{ gift.description }}</em> </strong>  </h5>
-            <!-- gift estimated price -->
-            <h5 class="text-uppercase"><strong>estimated price:</strong></h5>
-            <p>£ {{ gift.estimated_price }}</p>
-            <!-- child age -->
-            <h5 class="text-uppercase"><strong>age group:</strong></h5>
-            <p>{{ gift.age_range}} year old</p>
-            <!-- needed/committed/received -->
-            <!-- <p> {{ gift.needed }} </p>
-            <p> {{ gift.committed }} </p>
-            <p> {{ gift.received }} </p> -->
-            <!-- charity name -->
-            <h5 class="text-uppercase"><strong>charity name:</strong></h5>
-            <p>{{ gift.organisation_name }}</p>
-                <a class="btn col-12" href="{% url 'view_gift' request.user gift.id %}">Buy this gift</a>
-        </div>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

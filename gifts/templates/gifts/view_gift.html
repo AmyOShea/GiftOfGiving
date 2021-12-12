@@ -10,6 +10,19 @@
 
 <div class="page-top-banner">
     <h1 class="p-5 text-uppercase">Gift Viewer</h1>
+
+        {% if gift.committed_by %}
+            <p class="text-danger fs-5">This gift has been reserved.</p>
+        {% elif profile.user == request.user %}
+            <a class="btn col-12" href="{% url 'edit_gift' gift.id %}">Edit this gift</a>
+        {% else %}
+        <form method="POST" action="{% url 'view_gift' request.user gift.id %}" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>By submitting this form you agree to purchase the gift and send it to the registered charity</p>
+            <button type="submit">Submit</button>
+        </form>
+        {% endif %}
+    </div>
 </div>
 
 {% if gift.committed_by %}

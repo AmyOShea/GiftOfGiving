@@ -54,7 +54,8 @@
         {% endif %}
         </div>
     </div>
-    <h3><strong>Your Gifts</strong></h3>
+    {% if gifts %}
+    <h3><strong>Gifts you have committed to buy</strong></h3>
     <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
@@ -64,20 +65,44 @@
             </tr>
           </thead>
           <tbody>
-            {% if gifts %}
             {% for gift in gifts %}
             <tr>
                 <!-- gift description -->
-                <td>{{ gift.description }}</td>
+                <td><a href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
                 <!-- gift rough price -->
                 <td>£{{ gift.estimated_price }}</td>
                 <!-- child age -->
                 <td>{{ gift.age_range}}</td>
             </tr>
             {% endfor %}
-            {% endif %}
           </tbody>
     </table>
+    {% endif %}
+
+    {% if charity_gifts %}
+    <h3><strong>Gifts your organisation needs</strong></h3>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Gift Desctription</th>
+              <th scope="col">Estimated Price</th>
+              <th scope="col">Age Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for gift in charity_gifts %}
+            <tr>
+                <!-- gift description -->
+                <td><a href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
+                <!-- gift rough price -->
+                <td>£{{ gift.estimated_price }}</td>
+                <!-- child age -->
+                <td>{{ gift.age_range}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+    {% endif %}
 </div>
     
     
