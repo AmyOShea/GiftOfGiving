@@ -19,7 +19,7 @@ function createSnow() {
     }, 6000 )
 }
 
-if (currentUrl === 'https://8000-red-bass-pzg6c36t.ws-eu23.gitpod.io/' || currentUrl === 'https://gift-of-giving.herokuapp.com/' ) {
+if (currentUrl === 'https://8000-bronze-salamander-auu21iwj.ws-eu23.gitpod.io/' || currentUrl === 'https://gift-of-giving.herokuapp.com/' ) {
     setInterval(createSnow, 10)
 }
 

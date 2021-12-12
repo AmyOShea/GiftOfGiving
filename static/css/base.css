@@ -11,7 +11,7 @@
     --light-blue: #C6DFF3;
     --snowflake-blue: #859AD1;
     --liberty-blue: #4E66AC;
-    --white: var(--white);
+    --white: #FFF;
 
     /* box shadows */
    --small-box-shadow: 1px 1px 7px 0 var(--primary);
