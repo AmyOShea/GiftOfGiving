@@ -6,3 +6,11 @@
 .table {
     margin-top: 25px;
 }
+
+.edit-profile-container {
+    width: 380px;
+    border: var(--snowflake-blue) 3px solid;
+    border-radius: 3px;
+    background-color: var(--light-blue);
+    margin: 25px auto;
+}
