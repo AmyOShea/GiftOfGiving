@@ -15,7 +15,7 @@
     <div class="col-12 col-md-6 col-lg-5"> -->
     <div class="profile-descrip container">
         <div class="row">
-        <div class="col-12 col-md-6" id="profile-address">
+        <div class="col-12 col-md-6">
             <h3><strong>Details</strong></h3>
         {% if profile %}
             {% if profile.name %}
@@ -31,7 +31,7 @@
         {% endif %}
         <a class="btn mb-5" href="{% url 'edit_profile' request.user %}">Edit Profile</a>
         </div>
-        <div class="col-12 col-md-6" id="address-container">
+        <div class="col-12 col-md-6">
         {% if profile.type == 'charity' %}
             <h3><strong>Address</strong></h3>
             {% if address %}
