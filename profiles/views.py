@@ -32,7 +32,8 @@ def profile(request, user):
 
     try:
         gifts = Gift.objects.filter(committed_by=request.user)
-        context = {"profile": profile, "address": address, "user": user, 'gifts': gifts}
+        charity_gifts = Gift.objects.filter(organisation_name=profile.organisation_name, needed=True)
+        context = {"profile": profile, "address": address, "user": user, 'gifts': gifts, 'charity_gifts': charity_gifts}
     except:
         return render(request, "profiles/profile.html", context)
 
