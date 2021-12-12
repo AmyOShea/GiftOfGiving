@@ -60,6 +60,46 @@ def add_gift(request, user):
 
 
 @login_required
+def edit_gift(request, id):
+    """ View to edit new gifts"""
+    try:
+        gift = get_object_or_404(Gift, id=id)
+        profile = Profile.objects.get(user=request.user)
+    except:
+        messages.error(request, (
+            'Error. Gift or profile not found.')
+        )
+        return redirect(reverse('gifts'))
+    
+    profile = Profile.objects.get(user=request.user)  
+    if not profile.organisation_name == gift.organisation_name:
+        messages.error(request, (
+            'You do not have permission to edit this gift')
+        )
+        return redirect(reverse('gifts'))
+
+    if request.method == 'POST':
+        form = GiftForm(request.POST, request.FILES, instance=gift)
+        print(form)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully edited gift!')
+            return redirect('gifts')
+        else:
+            messages.error(request, 'Failed to edit gift. Please ensure the form is valid.')
+
+    else:
+        form = GiftForm(instance=gift)
+
+    template = 'gifts/edit-gifts.html'
+    context = {
+        'form': form,
+        'gift': gift
+    }
+    return render(request, template, context)
+
+
+@login_required
 def view_gift(request, user, id):
     """ View to return single gift and allow users to commit to buy """
     try:
@@ -71,9 +111,12 @@ def view_gift(request, user, id):
     gift = get_object_or_404(Gift, id=id)
     address = CharityAddress.objects.get(organisation_name=gift.organisation_name)
     
+    profile = Profile.objects.get(organisation_name=gift.organisation_name)
+    
     context = {
         'gift': gift,
         'address': address,
+        'profile': profile
     }
 
     if request.method == 'POST':

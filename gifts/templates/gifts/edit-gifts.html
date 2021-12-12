@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="page-top-banner">
+    <h1 class="p-5 text-uppercase">Edit Gifts</h1>
+</div>
+<div class="edit-profile-container add-gift-form">
+            <form method="POST" action="{% url 'edit_gift' gift.id %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <!-- cancel -->
+                <a class="btn col-12 mt-2" href="{% url 'gifts' %}"><span class="icon p-2">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </span>Cancel</a>
+            </form>
+</div>
+{% endblock %}
