@@ -26,6 +26,12 @@
       - [**Colours**](#colours)
   - [Wireframes](#wireframes)
     - [**Site Layout**](#site-layout)
+  - [Information Architecture](#information-architecture)
+    - [Database Choice](#database-choice)
+    - [Database Modelling](#database-modelling)
+      - [**Profiles App**](#profiles-app)
+        - [Profile](#profile)
+        - [Charity Address](#charity-address)
 
 ---
 
@@ -147,3 +153,33 @@ You can view the wireframes created for this project in [site wireframes](/docs/
 
 ---
 
+## Information Architecture
+
+### Database Choice
+
+### Database Modelling
+
+#### **Profiles App**
+
+##### Profile
+
+| **Title** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Username | user | ForeignKey | 'User', on_delete=models.CASCADE
+Name | name | CharField | max_length=100, null=False, blank=False
+Organisation Name | organisation_name | CharField | max_length=150, null=False, blank=False
+Type | type | CharField | max_length=25, choices=USER_TYPE_CHOICES, null=False, blank=False
+Verified | verified | BooleanField | default=False
+
+##### Charity Address
+
+| **Title** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Username | user | ForeignKey | 'User', on_delete=models.CASCADE
+Organisation Name | organisation_name | CharField | max_length=150, null=False, blank=False
+Address Line 1 | address_line_one | CharField | max_length=150, null=False, blank=False
+Address Line 2 | address_line_two | CharField | max_length=150, null=True, blank=True
+Address Line 3 | address_line_three | CharField | max_length=150, null=True, blank=True
+County | county | CharField | max_length=150, null=False, blank=False
+Country | country | CharField | max_length=150, null=False, blank=False
+Postcode | postcode | CharField | max_length=150, null=True, blank=True
