@@ -2,12 +2,10 @@
 {% load static %}
 
 {% block content %}
-<div class="container mb-5 body-container">
+<div class="container-fluid px-0 mb-5 body-container">
     <!-- Add new gift form-->
-    <div class="row no-gutters align-items-center">
-        <div class="col-12 my-4">
-            <h1>Required gifts</h1>
-        </div>
+    <div class="page-top-banner">
+        <h1 class="p-5">Required Gifts</h1>
     </div>
     <div class="row no-gutters align-items-center justify-content-center">
         {% for gift in show_gifts %}
