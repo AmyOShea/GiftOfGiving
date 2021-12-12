@@ -1,6 +1,6 @@
 <header>
     <!-- Third Toggle navbar: https://getbootstrap.com/docs/5.1/components/navbar/ -->
-    <nav class="navbar navbar-expand-lg navbar-light" id="primary-secondary-pallette">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-expand-md" id="primary-secondary-pallette">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">GiftOfGiving</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,33 +8,40 @@
           </button>
           
           <!-- Second example of horizontial alignment for justify-content-end: https://getbootstrap.com/docs/5.1/components/navs-tabs/ -->
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <!-- float-end instead of float-right in v5: https://stackoverflow.com/questions/63948287/bootstrap-5-navbar-align-items-right -->
-            <ul class="navbar-nav float-end">
+            <ul class="navbar-nav ">
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
               </li>
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'gifts' %}">Gifts</a>
               </li>
               {% if user.is_authenticated %}
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_gift' request.user %}">Add Gift</a>
               </li>
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile' request.user %}">Profile</a>
               </li>
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href='/accounts/logout/'>Sign-out </a>
               </li>
               {% endif %}
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact' %}">Contact</a>
               </li>
               {% if not user.is_authenticated %}
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href='/accounts/signup/'>Sign-up</a>
               </li>
+              <span>|</span>
               <li class="nav-item">
                 <a class="nav-link" href='/accounts/login/'>Log-in </a>
               </li>

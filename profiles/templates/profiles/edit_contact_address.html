@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}" type="text/css">
+{% endblock %}
+
 {% block content %}
-<div class="row px-3">
-    <div class="col12">
-        <h2 class="text-uppercase my-4">Update Contact Address</h2>
-        <p>Please enter the registered address of your charity</p>
-    </div>
-    <div class="col col-xs-12 col-md-8 col-lg-6">
+<div class="page-top-banner">
+    <h1 class="p-5">Update Contact Address</h1>
+</div>    
+    <div class="edit-profile-container">
         <form method="POST" action="{% url 'edit_address' request.user %}" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
@@ -16,5 +19,4 @@
             <button type="submit" class="btn mb-4">Update Address</button>
         </form>
     </div>
-</div>
 {% endblock %}
