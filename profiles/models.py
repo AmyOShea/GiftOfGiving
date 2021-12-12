@@ -12,7 +12,7 @@ class Profile(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, null=False, blank=False)
-    organisation_name = models.CharField(max_length=150, null=True, blank=True)
+    organisation_name = models.CharField(max_length=150, null=False, blank=False)
     type = models.CharField(
         max_length=25, choices=USER_TYPE_CHOICES, null=False, blank=False
     )

@@ -27,12 +27,16 @@ def gifts(request):
 @login_required
 def add_gift(request, user):
     """ View to add new gifts"""
+
     verified_profile = Profile.objects.filter(user=request.user, verified=True)
 
     if not verified_profile:
-        messages.error(request, 'Functionality available to the verified users only.')
+        messages.error(request, (
+            'Functionality available to the verified users only.' +
+            'Please ensure profile is updated and email verification documents.')
+        )
         return redirect(reverse('gifts'))
-    
+
     org_name = Profile.objects.get(user=request.user)
     if request.method == 'POST':
         add_gift_form = GiftForm(request.POST, request.FILES)

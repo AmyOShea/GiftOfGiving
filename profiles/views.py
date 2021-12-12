@@ -11,11 +11,12 @@ from .forms import ProfileForm, CharityAddressForm
 @login_required
 def profile(request, user):
     """View to render users profile"""
+    # Get object or create empty one
     profile, created = Profile.objects.get_or_create(
         user=request.user,
         defaults={"name": "", "organisation_name": "", "type": "donor"},
     )
-
+    # Get object or create empty one
     address, created = CharityAddress.objects.get_or_create(
         user=request.user,
         defaults={
@@ -41,17 +42,35 @@ def profile(request, user):
 @login_required
 def edit_profile(request, user):
     """View to render edit profile and allow users to update profile"""
+    # Get object or create empty one
     profile, created = Profile.objects.get_or_create(
         user=request.user,
         defaults={"name": "", "organisation_name": "", "type": "donor"},
     )
 
+    # Get object or create empty one
+    address, created = CharityAddress.objects.get_or_create(
+        user=request.user,
+        defaults={
+            "county": "",
+            "country": "",
+            "address_line_one": "",
+            "organisation_name": "",
+        },
+    )
+
     if request.method == "POST":
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
+            # Add user before commit
             form = form.save(commit=False)
             form.user = request.user
             form.save()
+            # Update Charity Address table with org name
+            org_name = CharityAddressForm(instance=address)
+            org_name = org_name.save(commit=False)
+            org_name.organisation_name = form.organisation_name
+            org_name.save()
             messages.success(request, "Profile information updated!")
             return redirect(reverse("profile", args=[user]))
         else:
@@ -67,6 +86,7 @@ def edit_profile(request, user):
 @login_required
 def edit_address(request, user):
     """View to render edit address and allow users to update address"""
+    # Get object or create empty one
     address, created = CharityAddress.objects.get_or_create(
         user=request.user,
         defaults={
@@ -80,6 +100,7 @@ def edit_address(request, user):
     if request.method == "POST":
         form = CharityAddressForm(request.POST, instance=address)
         if form.is_valid():
+            # Add user before submitting form
             form = form.save(commit=False)
             form.user = request.user
             form.save()
