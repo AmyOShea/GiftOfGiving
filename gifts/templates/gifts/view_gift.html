@@ -1,71 +1,55 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}" type="text/css">
 {% endblock %}
-
 {% block content %}
-
 <div class="page-top-banner">
     <h1 class="p-5 text-uppercase">Gift Viewer</h1>
-
-        {% if gift.committed_by %}
-            <p class="text-danger fs-5">This gift has been reserved.</p>
-        {% elif profile.user == request.user %}
-            <a class="btn col-12" href="{% url 'edit_gift' gift.id %}">Edit this gift</a>
-        {% else %}
-        <form method="POST" action="{% url 'view_gift' request.user gift.id %}" class="form mb-2" enctype="multipart/form-data">
-            {% csrf_token %}
-            <p>By submitting this form you agree to purchase the gift and send it to the registered charity</p>
-            <button type="submit">Submit</button>
-        </form>
-        {% endif %}
-    </div>
 </div>
 
-{% if gift.committed_by %}
-    <p class="text-danger fs-5">This gift has been reserved.</p>
-{% elif profile.user == request.user %}
-    <a class="btn col-12" href="{% url 'edit_gift' gift.id %}">Edit this gift</a>
-{% else %}
+<div class="container my-4">
+    <div class="row no-gutters align-items-center">
+        <div class="col-sm-12 col-md-4 p-3 contact-container">
+            <!-- gift image -->
+            <div class="mb-3">
+                <img src="{{ gift.image.url }}" class="d-block w-100" alt="{{ gift.description }}">
+            </div>
+            <!-- gift description -->
+            <p><strong>Gift Description</strong>: {{ gift.description }}</p>
+            <!-- gift rough price -->
+            <p><strong>Estimated Price</strong>: £{{ gift.estimated_price }}</p>
+            <!-- child age -->
+            <p><strong>Age Range</strong>: {{ gift.age_range}}</p>
+            <p><strong>Posted by</strong>: {{ profile.organisation_name }}</p>
 
-<div id="gift-viewer-container">
-    <h3><strong> {{ gift.description }}</strong></h3>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <!-- gift description -->
-                <!-- gift image -->        
-                <img class="img-fluid" src="{{ gift.image.url }}" alt="{{ gift.description }}">
-                <!-- gift rough price -->
+            {% if gift.committed_by == request.user %}
+                <p class="text-success fs-5"><strong><em>*** You have agreed to purchase this gift ***</em></strong></p>
+            {% elif gift.committed_by %}
+                <p class="text-danger fs-5"><strong>This gift has been reserved.</strong></p>
+            {% elif profile.user == request.user %}
+                <a class="btn col-12" href="{% url 'edit_gift' gift.id %}">Edit this gift</a>
+            {% else %}
+            <form method="POST" action="{% url 'view_gift' request.user gift.id %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p><em>*** By submitting this form you agree to purchase the gift and send it to the registered charity. ***</em></p>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            {% endif %}
+            {% if request.user == gift.committed_by %}
+            <div class="address-line-height pt-4">
+                <p><b>Please post item to:</b></p>
+                <p>{{gift.organisation_name}}</p>
+                <p>{{address.address_line_one}}</p>
+                <p>{{address.address_line_two}}</p>
+                <p>{{address.address_line_three}}</p>
+                <p>{{address.county}}</p>
+                <p>{{address.country}}</p>
+                <p>{{address.postcode}}</p>
             </div>
-            <div class="col-sm-12 col-md-6">
-                <h5><strong>Estimated Price</strong>: £{{ gift.estimated_price }}</h5>
-                <!-- child age -->
-                <h5><strong>Age Range</strong>: {{ gift.age_range}}</h5>
-                <p>By submitting this form you agree to purchase the gift and send it to the registered charity</p>
-                <form method="POST" action="{% url 'view_gift' request.user gift.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <button class="btn" type="submit">Submit</button>
-                </form>
-            </div>
-    </div>
-    </div>
-{% if request.user == gift.committed_by %}
-    <div class="address-line-height">
-        <h5><strong>Address</strong></h5>
-        <p>{{gift.organisation_name}}</p>
-        <p>{{address.address_line_one}}</p>
-        <p>{{address.address_line_two}}</p>
-        <p>{{address.address_line_three}}</p>
-        <p>{{address.county}}</p>
-        <p>{{address.country}}</p>
-        <p>{{address.postcode}}</p>
+            {% endif %}
+        </div>
     </div>
 </div>
-
-{% endif %}
-{% endif %}
 {% endblock %}
