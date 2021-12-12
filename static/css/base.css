@@ -267,6 +267,17 @@ footer a i:hover {
     cursor: pointer;
 }
 
+.card-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Added small bit of padding to level reserved gifts with ones you can buy */
+.gift-button-padding {
+    margin-bottom: 8px;
+}
+
 /* PROFILE PAGE */
 
 .page-top-banner {
