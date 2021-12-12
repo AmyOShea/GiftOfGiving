@@ -273,6 +273,10 @@ footer a i:hover {
     object-fit: cover;
 }
 
+.table-link {
+    line-height: 24px !important;
+}
+
 /* Added small bit of padding to level reserved gifts with ones you can buy */
 .gift-button-padding {
     margin-bottom: 8px;
