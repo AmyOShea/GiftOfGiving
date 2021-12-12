@@ -8,7 +8,7 @@
 }
 
 .table {
-    margin-top: 48px;
+    margin-bottom: 48px;
 }
 
 /* Forms for editing charity info */
@@ -27,10 +27,30 @@
     border-radius: 5px;
 }
 
+/* Add Gifts */
+
+.btn.btn-file.col-6.pe-2 {
+    margin-top: 16px;
+}
+
 @media screen and (max-width: 768px) {
     .edit-profile-container {
         width: 93vw;
     }        
+}
+
+/* Next two queries make the span and button in add gift form act the same */
+@media screen and (max-width: 580px) {
+    .btn.btn-file.col-6.pe-2 .icon.p-2 {
+        display: block;
+        padding: 0 0.75rem !important;
+    }     
+}
+
+@media screen and (max-width: 492px) {
+    .btn.btn-file.col-6.pe-2 .icon.p-2 {
+        display: inline-block;
+    }     
 }
 
 @media screen and (min-width: 989px) {
