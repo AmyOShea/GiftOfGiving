@@ -1,10 +1,10 @@
 # Gift Of Giving
 
-## ![GiftOfGiving](/static/images/hero-img.webp)
+## ![GiftOfGiving](/docs/GiftOfGiving.PNG)
 
 [GiftOfGiving](https://gift-of-giving.herokuapp.com/) is a website which allows charities to request gifts for the children during the holiday season as well as for the donators to support the charities by choosing the gift they would like to donate.  
 
-![Site display on different screens]()
+![Site display on different screens](/docs/responsive-image.PNG)
 
 ---
 
@@ -45,8 +45,6 @@
       - [**User Account**](#user-account)
       - [**Super User**](#super-user)
     - [Future Features](#future-features)
-    - [Redundant features](#redundant-features)
-  - [Changes applied since planning](#changes-applied-since-planning)
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Local Deployment](#local-deployment)
@@ -299,13 +297,7 @@ The website is designed using four applications: `Home`, `Gifts`, `Profiles`,  a
 
 ### Future Features
 
-### Redundant features
-
 [Back to content](#contents)
-
----
-
-## Changes applied since planning
 
 ---
 

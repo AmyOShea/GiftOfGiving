@@ -11,14 +11,20 @@ from profiles.models import CharityAddress, Profile
 from .forms import GiftForm
 
 
+@login_required
 def gifts(request):
     """ View to render gifts template """
 
     show_gifts = Gift.objects.all()
+    user_profile = Profile.objects.get(user=request.user)
+    user  = request.user
     
     template = 'gifts/gifts.html'
+
     context = {
         'show_gifts': show_gifts,
+        'user_profile': user_profile,
+        'user': user
     }
 
     return render(request, template, context)
@@ -32,8 +38,8 @@ def add_gift(request, user):
 
     if not verified_profile:
         messages.error(request, (
-            'Functionality available to the verified users only.' +
-            'Please ensure profile is updated and email verification documents.')
+            'Functionality available to the verified users only. ' +
+            'Please ensure profile is updated and email verification documents sent.')
         )
         return redirect(reverse('gifts'))
 
@@ -80,7 +86,7 @@ def edit_gift(request, id):
 
     if request.method == 'POST':
         form = GiftForm(request.POST, request.FILES, instance=gift)
-        print(form)
+
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully edited gift!')

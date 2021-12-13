@@ -87,7 +87,7 @@
             {% for gift in gifts %}
             <tr>
                 <!-- gift description -->
-                <td><a href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
+                <td><a class="table-link" href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
                 <!-- gift rough price -->
                 <td>£{{ gift.estimated_price }}</td>
                 <!-- child age -->
@@ -112,7 +112,7 @@
             {% for gift in charity_gifts %}
             <tr>
                 <!-- gift description -->
-                <td><a href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
+                <td><a class="table-link" href="{% url 'view_gift' request.user gift.id %}">{{ gift.description }}</a></td>
                 <!-- gift rough price -->
                 <td>£{{ gift.estimated_price }}</td>
                 <!-- child age -->

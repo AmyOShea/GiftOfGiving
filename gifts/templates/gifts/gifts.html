@@ -30,7 +30,9 @@
                 <!-- charity name -->
                 <h5 class="text-uppercase"><strong>charity name:</strong></h5>
                 <p>{{ gift.organisation_name }}</p>
-                    {% if gift.committed_by %}
+                    {% if gift.organisation_name == user_profile.organisation_name %}
+                    <a class="gift-button-padding btn col-12" href="{% url 'edit_gift' gift.id %}">Edit Gift</a>
+                    {% elif gift.committed_by %}
                     <p class="text-danger fs-5">Reserved</p>
                     {% else %}
                     <a class="gift-button-padding btn col-12" href="{% url 'view_gift' request.user gift.id %}">Buy this gift</a>
@@ -39,4 +41,5 @@
             {% endif %}
         {% endfor %}
     </div>
+</div>
 {% endblock %}
