@@ -1,8 +1,8 @@
 # Gift Of Giving
 
-## ![GiftOfGiving](/docs/GiftOfGiving.PNG)
+## ![GiftOfGiving](/static/images/hero-img.webp)
 
-[GiftOfGiving](https://gift-of-giving.herokuapp.com/) is a website which allows charities to request gifts for the children during the holiday season as well as for the donators to support the charities by choosing the gift they would like to donate.  
+[GiftOfGiving](https://gift-of-giving.herokuapp.com/) is a website which allows charities to request gifts for the children during the holiday season as well as for the donators to support the charities by choosing the gift they would like to donate.
 
 ![Site display on different screens](/docs/responsive-image.PNG)
 
@@ -11,7 +11,6 @@
 ## Contents
 
 - [Gift Of Giving](#gift-of-giving)
-  - [!GiftOfGiving](#)
   - [Contents](#contents)
   - [UX](#ux)
     - [Project Goals](#project-goals)
@@ -19,13 +18,14 @@
     - [Site Visitor/User Goals](#site-visitoruser-goals)
     - [User Stories](#user-stories)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
-      - [**Requirements**](#requirements)
-      - [**Expectations**](#expectations)
+      - [Requirements](#requirements)
+      - [Expectations](#expectations)
     - [Design Choices](#design-choices)
-      - [**Fonts**](#fonts)
-      - [**Colours**](#colours)
+      - [Fonts](#fonts)
+      - [Colours](#colours)
+      - [Imagery](#imagery)
   - [Wireframes](#wireframes)
-    - [**Site Layout**](#site-layout)
+    - [Site Layout](#site-layout)
   - [Information Architecture](#information-architecture)
     - [Database Choice](#database-choice)
     - [Database Modelling](#database-modelling)
@@ -42,8 +42,10 @@
     - [Tools](#tools)
   - [Features](#features)
     - [Implemented Features](#implemented-features)
-      - [**User Account**](#user-account)
-      - [**Super User**](#super-user)
+      - [User Account](#user-account)
+      - [Donor Account](#donor-account)
+      - [Charity Account](#charity-account)
+      - [Super User](#super-user)
     - [Future Features](#future-features)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -94,7 +96,7 @@ The main goal of this project is to support less fortunate children during holid
 
 **Applies to new site users:**
 
-- As a user, I am able to  create an account.
+- As a user, I am able to create an account.
 
 **Applies to all returning users:**
 
@@ -149,15 +151,29 @@ The main goal of this project is to support less fortunate children during holid
 
 - *All fonts*
 
-  ```font-family: Baloo Bhaijaan 2', sans-serif;```
+For the main text of the site, we decided to go with a basic san-serif font that would be easy to read. Baloo had nice rounded edges that we felt work well in an environment that had children in mind. 
+
+```font-family: Baloo Bhaijaan 2', sans-serif;```
 
 - *Special font - welcome container*
 
-  ```font-family: ''Meow Script', cursive;```
+For the landing page we wanted to add something elegant and that had a showstopper quality. We decided on Meow because it's an elegant cursive but maintains readability. 
+
+```font-family: ''Meow Script', cursive;```
 
 #### **Colours**
 
+Because of the winter theme, we decided to go with an icy pallette, incorperating shades of blues for a winter wonderland feel. 
+
 ![Colour palette](/docs/colour-pallette.PNG)
+
+We maintained the same colour pallete throughout to maintain consistency.
+
+#### **Imagery**
+
+The site is based around gifts for children so we wanted incorporate images on the home page that had a child-like hand drawn feel to them. 
+
+As a user progresses through the site, there's a more minimal theme with just a banner on the top of the page. This maintains consistancy throughout. 
 
 [Back to content](#contents)
 
@@ -169,7 +185,7 @@ Site moc-ups were designed using [balsamiq wireframes](https://balsamiq.com/). T
 
 You can view the wireframes created for this project in [site wireframes](/docs/wireframes.pdf) folder.
 
-  **Please note, as we were developing the project, we have identified some weaknesses in the UX and therefore made the required changes. The deployed site looks somewhat different in comparison to the wireframes. These changes will allow the user to have a better experience and allow easier navigation. The design theme of the features is a close match to the overall site to ensure continuation and flow.*
+ **Please note, as we were developing the project, we have identified some weaknesses in the UX and therefore made the required changes. The deployed site looks somewhat different in comparison to the wireframes. These changes will allow the user to have a better experience and allow easier navigation. The design theme of the features is a close match to the overall site to ensure continuation and flow.*
 
 [Back to content](#contents)
 
@@ -235,7 +251,7 @@ Comments | comments | CharField | max_length=1500, null=False, blank=False
 
 [Back to content](#contents)
 
----  
+---
 
 ## Technologies
 
@@ -278,7 +294,7 @@ Comments | comments | CharField | max_length=1500, null=False, blank=False
 
 ## Features
 
-The website is designed using four applications: `Home`, `Gifts`, `Profiles`,  and `Contact`.
+The website is designed using four applications: `Home`, `Gifts`, `Profiles`, and `Contact`.
 
 ### Implemented Features
 
@@ -291,11 +307,23 @@ The website is designed using four applications: `Home`, `Gifts`, `Profiles`,  a
 - The users can **create** an account where they can store account information such as their address and **edit** their details.
 - The user can request a **password re-set**.
 
+#### **Donor Account**
+
+- From their profile page, users can **view** a list of gifts that have agreed to donate.
+- From the gifts page, the user can select a gift to donate. Once they have confirmed they they will donate, that present is marked a reserved and nobody else can select it.
+
+#### **Charity Account**
+
+- From their profile page, the user can **view** a list of gifts that they have requested.
+- The user can **add, edit and delete** presents from their account with ease. 
+
 #### **Super User**
 
 - The **Super User** can verify that the charity's information in the database, which would then allow the charities to add gifts once verified.
 
 ### Future Features
+
+- A frontended admin page for ease of access. 
 
 [Back to content](#contents)
 
@@ -326,7 +354,7 @@ To deploy Art-ial locally, take the following steps:
 
 1. From the applications [repository](https://github.com/Daisy-McG/GiftOfGiving), click the *code* button and download the zip file.
 
-    Alternatively, you can clone the repository using the following line in your terminal:
+  Alternatively, you can clone the repository using the following line in your terminal:
 
 ```terminal
 git clone https://github.com/Daisy-McG/GiftOfGiving.git
@@ -373,7 +401,6 @@ Then follow the instructions to create the superuser.
 
 6. After you login to the admin panel, you can add data to be displayed in your app for `GIFTS` app if required. Refer to [database modeling](#database-modelling).
 
-
 7. To initiate the application, type the command `python manage.py runserver` in your terminal. The application is now available in your browser at the address: `http://localhoset:8000`
 
 [Back to content](#contents)
@@ -405,21 +432,21 @@ pip3 freeze > requirements.txt
 7. In Heroku Resources tab, navigate to **Add-Ons** section and search for **Heroku Postgres**. I recommend you choose hobby level for this application. You should also search for **Cloudinary - Image and Video Management** to ensure your media files load to Cloudinary.
 8. In settings tab, navigate to **Reveal Config Vars** and add the following variables:
 
-| **KEY**               | **VALUE**                          |
+| **KEY**               | **VALUE**                          |
 | --------------------- | -----------------------------------|
-| CLOUDINARY_URL        | YOUR_CLOUDINARY_URL                |
-| DATABASE_URL          | YOUR_DATABASE_URL                  |
-| EMAIL_HOST            | smtp.google.com (if using gmail)   |
-| EMAIL_HOST_PASS       | YOUR_EMAIL_PASSWORD                |
-| EMAIL_HOST_USER       | YOUR_EMAIL_USER                    |
-| SECRET_KEY            | YOUR_DJANGO_SECRET_KEY             |
+| CLOUDINARY_URL        | YOUR_CLOUDINARY_URL                |
+| DATABASE_URL          | YOUR_DATABASE_URL                  |
+| EMAIL_HOST            | smtp.google.com (if using gmail)   |
+| EMAIL_HOST_PASS       | YOUR_EMAIL_PASSWORD                |
+| EMAIL_HOST_USER       | YOUR_EMAIL_USER                    |
+| SECRET_KEY            | YOUR_DJANGO_SECRET_KEY             |
 
 9. In settings.py in your IDE, temporarily comment out the database and use below code instead (make sure you do not commit!):
 
 ```python
 DATABASES = {
-        'default': dj_database_url.parse('POSTGRESS URL')
-    }
+        'default': dj_database_url.parse('POSTGRESS URL')
+    }
 ```
 
 10. In terminal, migrate the models to create the Postgress database using the following commands:
@@ -437,11 +464,11 @@ python manage.py createsuperuser
 
 Then follow the instructions to create the superuser.
 
-12.  After you login to the admin panel, you can add data to be displayed in your app for `GIFTS` app if required.
+12. After you login to the admin panel, you can add data to be displayed in your app for `GIFTS` app if required.
 
 13. Remove the temporary database from settings.py and uncomment the original code, then push the code to origin.
-14.  Back to in **Heroku dashboad**, deploy the application.
-15.  To view the site, click on **View App**.
+14. Back to in **Heroku dashboad**, deploy the application.
+15. To view the site, click on **View App**.
 
 [Back to content](#contents)
 
@@ -451,9 +478,15 @@ Then follow the instructions to create the superuser.
 
 ### Images
 
+* All images were created by the team
+
 ### Image editing
 
+* Images were created and edited using the [Procreate App](https://apps.apple.com/us/app/procreate/id425073498)
+
 ### Code ideas
+
+* Home page snow effect from [this YouTube tutorial](https://www.youtube.com/watch?v=_ARGxz_cU_o) and tweaked as needed
 
 [Back to content](#contents)
 
@@ -461,4 +494,15 @@ Then follow the instructions to create the superuser.
 
 ## Acknowledgements
 
+Site creators:
+
+[Neringa Bickmore](https://github.com/neringabickmore) - Primarily Back End
+
+[Daisy McGirr](https://github.com/Daisy-McG) - Primarily Back End
+
+[Sean Meade](https://github.com/sean-meade) - Primarily Front End
+
+[Amy O'Shea](https://github.com/AmyOShea) - Primarily Front End
+
 [Back to content](#contents)
+
