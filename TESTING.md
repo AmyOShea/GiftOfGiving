@@ -22,7 +22,7 @@ Email is sent with a verifcation link in it.
 
 Email is sent with a verifcation link in it.
 
-![TC001](docs/testing/tc001.jpg)
+![TC001](docs/testing/tc001.JPG)
 
 <hr>
 
@@ -46,7 +46,7 @@ Account logs in successfully.
 
 Account logs in successfully.
 
-![TC002](docs/testing/tc002.jpg)
+![TC002](docs/testing/tc002.JPG)
 
 <hr>
 
@@ -71,7 +71,7 @@ Profile is updated successfully.
 
 Profile is updated successfully.
 
-![TC003](docs/testing/tc003.jpg)
+![TC003](docs/testing/tc003.JPG)
 
 <hr>
 
@@ -96,7 +96,7 @@ Charity Address is updated successfully.
 
 Charity Address is updated successfully.
 
-![TC004](docs/testing/tc004.jpg)
+![TC004](docs/testing/tc004.JPG)
 
 <hr>
 
@@ -120,7 +120,7 @@ Information is displayed explaining how to verify the charity.
 
 Information is displayed explaining how to verify the charity.
 
-![TC005](docs/testing/tc005.jpg)
+![TC005](docs/testing/tc005.JPG)
 
 <hr>
 
@@ -146,7 +146,7 @@ Gift is successfully added and can now be viewed on the gifts page.
 Gift is successfully added and can now be viewed on the gifts page.
 
 
-![TC006](docs/testing/tc006.jpg)
+![TC006](docs/testing/tc006.JPG)
 <hr>
 
 TC007
@@ -171,9 +171,9 @@ The gift has successfully updated with the new details.
 
 The gift has successfully updated with the new details.
 
-![tc007-1](docs/testing/tc007_1.jpg)
+![tc007-1](docs/testing/tc007_1.JPG)
 
-![tc007-2](docs/testing/tc007_2.jpg)
+![tc007-2](docs/testing/tc007_2.JPG)
 <hr>
 
 TC008
@@ -195,7 +195,7 @@ A flash message is displayed alerting the user that they need to be verified fir
 
 A flash message is displayed alerting the user that they need to be verified first.
 
-![TC008](docs/testing/tc008.jpg)
+![TC008](docs/testing/tc008.JPG)
 
 <hr>
 
@@ -220,9 +220,9 @@ Gift is updated and information is displayed to the user with the postal address
 
 Gift is updated and information is displayed to the user with the postal address for the gift and the status of the gift on the gifts page has updated to reserved.
 
-![tc009-1](docs/testing/tc009.jpg)
+![tc009-1](docs/testing/tc009.JPG)
 
-![tc009-2](docs/testing/tc009_2.jpg)
+![tc009-2](docs/testing/tc009_2.JPG)
 
 <hr>
 
@@ -246,9 +246,9 @@ Flash message is displayed to alert the user of successful submission and the co
 
 Flash message is displayed to alert the user of successful submission and the contact request can be seen from the admin panel in the contact table.
 
-![tc010-1](docs/testing/tc010_1.jpg)
+![tc010-1](docs/testing/tc010_1.JPG)
 
-![tc010-2](docs/testing/tc010_2.jpg)
+![tc010-2](docs/testing/tc010_2.JPG)
 
 <hr>
 
@@ -272,9 +272,9 @@ Form does not submit and message is displayed to say it cannot be blank.
 
 Form does not submit and message is displayed to say it cannot be blank.
 
-![tc011-1](docs/testing/tc011_1.jpg)
+![tc011-1](docs/testing/tc011_1.JPG)
 
-![tc011-2](docs/testing/tc011_2.jpg)
+![tc011-2](docs/testing/tc011_2.JPG)
 
 <hr>
 
@@ -347,7 +347,7 @@ All icons open the respective websites in a new tab.
 
 All icons open the respective websites in a new tab.
 
-![tc014](docs/testing/tc014.jpg)
+![tc014](docs/testing/tc014.JPG)
 
 ## Validator Testing
 
@@ -355,17 +355,17 @@ All icons open the respective websites in a new tab.
 
 Profiles CSS
 
-![Profiles CSS](docs/testing/profiles_css.jpg)
+![Profiles CSS](docs/testing/profiles_css.JPG)
 
 Base Css
 
-![Base CSS](docs/testing/base_css.jpg)
+![Base CSS](docs/testing/base_css.JPG)
 
 ### JavaScript
 
 Base JS
 
-![Base JS](docs/testing/base_js.jpg)
+![Base JS](docs/testing/base_js.JPG)
 
 ### HTML
 
@@ -375,7 +375,7 @@ The following Validated with no errors:
 - Profile Page
 - Contact Page
 
-![Success](docs/testing/html_validator.jpg)
+![Success](docs/testing/html_validator.JPG)
 
 The Following Validator with the same error:
 - The Edit Profile Page
@@ -383,6 +383,6 @@ The Following Validator with the same error:
 - The Add Gift Page
 - The Edit Gift Page
 
-![Error](docs/testing/edit_gift_add.jpg)
+![Error](docs/testing/edit_gift_add.JPG)
 
 The error showing duplicate id's is coming from the use of django forms. For each form field it created, it created a div with the same id as the form input. We have been unable to find a resolution to this yet but it is under investigation.
