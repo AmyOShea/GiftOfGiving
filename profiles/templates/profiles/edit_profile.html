@@ -11,7 +11,8 @@
     <h1 class="p-5">Update Profile Information</h1>
 </div>
     <div class="edit-profile-container">
-        <p class="fs-6">If you are a donor, please add N/A to the organisation name field. </p>
+        <p class="fs-6">If you are a donor, please add N/A to the organisation name field.</p>
+        <p class="fs-6">Warning, if you change your Organisation name, listed gifts will be deleted.</p>
         <form method="POST" action="{% url 'edit_profile' request.user %}" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}

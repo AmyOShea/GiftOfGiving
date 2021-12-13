@@ -115,10 +115,16 @@ def view_gift(request, user, id):
         return redirect('gifts')
     
     gift = get_object_or_404(Gift, id=id)
-    address = CharityAddress.objects.get(organisation_name=gift.organisation_name)
+    global address
+    try:
+        address = get_object_or_404(CharityAddress, organisation_name=gift.organisation_name)
+        profile = Profile.objects.get(organisation_name=gift.organisation_name)
+    except:
+        messages.error(request, 'Something went wrong. Unable to load gift.')
+        Gift.objects.filter(id=id).delete()
+        return redirect('gifts')
     
-    profile = Profile.objects.get(organisation_name=gift.organisation_name)
-    
+
     context = {
         'gift': gift,
         'address': address,
