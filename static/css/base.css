@@ -142,6 +142,38 @@ footer a i:hover {
     0 0 151px var(--white);
 }
 
+/* Edit Gift Form */
+#div_id_received {
+    display: flex;
+    align-items: end;
+}
+
+#div_id_received > label {
+    margin-bottom: 10px;
+    margin-left: 2px;
+}
+
+#div_id_received > .form-check-input {
+    float: none;
+    margin-left: -1em;
+}
+
+#div_id_needed {
+    display: flex;
+    align-items: end;
+}
+
+#div_id_needed > label {
+    margin-bottom: 10px;
+    margin-left: 2px;
+}
+
+#div_id_needed > .form-check-input {
+    float: none;
+    margin-left: -1em;
+}
+
+
 /* Snow Animation */
 
 .fa-circle {
