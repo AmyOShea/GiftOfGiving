@@ -16,7 +16,11 @@ def gifts(request):
     """ View to render gifts template """
 
     show_gifts = Gift.objects.all()
-    user_profile = Profile.objects.get(user=request.user)
+    try:
+        user_profile = Profile.objects.get(user=request.user)
+    except:
+        messages.error(request, "Please update your profile to view gifts")
+        return redirect(reverse("profile", args=[request.user]))
     user  = request.user
     
     template = 'gifts/gifts.html'
@@ -115,15 +119,16 @@ def view_gift(request, user, id):
         return redirect('gifts')
     
     gift = get_object_or_404(Gift, id=id)
-    global address
+    
     try:
-        address = get_object_or_404(CharityAddress, organisation_name=gift.organisation_name)
         profile = Profile.objects.get(organisation_name=gift.organisation_name)
     except:
-        messages.error(request, 'Something went wrong. Unable to load gift.')
+        messages.error(request, 'Sorry this gift is no longer available')
         Gift.objects.filter(id=id).delete()
         return redirect('gifts')
-    
+
+    profile = Profile.objects.get(organisation_name=gift.organisation_name)
+    address = get_object_or_404(CharityAddress, organisation_name=gift.organisation_name)
 
     context = {
         'gift': gift,
